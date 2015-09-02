@@ -10,7 +10,7 @@ public class GobballSpawningScript : MonoBehaviour {
 		DIR_RIGHT
 	}
 
-	int type;
+	public int type;
 
 	// Use this for initialization
 	void Start () {
