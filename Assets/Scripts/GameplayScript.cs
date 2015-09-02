@@ -2,7 +2,7 @@
 using UnityEngine.UI;
 using System.Collections;
 
-public class GameControllerScript : MonoBehaviour {
+public class GameplayScript : MonoBehaviour {
 
 	public enum GOBBALL_TYPE {
 		GOBBALL_PINK,
@@ -13,9 +13,10 @@ public class GameControllerScript : MonoBehaviour {
 
 	//public Text countdownTimerText;
 	//public Text numOfGobballLeftText;
+	public Transform gobballParent;
 	public GameObject gobball;
 	public Sprite[] gobballSprite;
-	int numOfGobball = 10;
+	public int numOfGobball = 10;
 
 	// Use this for initialization
 	void Start () {
@@ -32,6 +33,7 @@ public class GameControllerScript : MonoBehaviour {
 			Vector3 gobballPosition = new Vector3 (Random.Range(-8.0f, 8.0f), Random.Range(-4.0f, 4.0f), 0);
 			GameObject newGobball = Instantiate (gobball, gobballPosition, Quaternion.identity) as GameObject;
 			newGobball.GetComponent<SpriteRenderer>().sprite = gobballSprite[Random.Range (0, 3)];
+			newGobball.transform.SetParent(gobballParent);
 		}
 	}
 }
