@@ -160,7 +160,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 2
 --- !u!1 &363917171
 GameObject:
   m_ObjectHideFlags: 0
@@ -478,8 +478,8 @@ Canvas:
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
-  m_SortingLayerID: 0
-  m_SortingOrder: 2
+  m_SortingLayerID: -612201477
+  m_SortingOrder: 0
 --- !u!224 &708559439
 RectTransform:
   m_ObjectHideFlags: 0
@@ -492,7 +492,7 @@ RectTransform:
   m_Children:
   - {fileID: 1152681207}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 1
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
@@ -760,7 +760,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 3
 --- !u!114 &1297656442
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -826,7 +826,7 @@ Transform:
   m_LocalScale: {x: 1.38802075, y: 1.38802075, z: .925347149}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 4
 --- !u!1 &1635730333
 GameObject:
   m_ObjectHideFlags: 0
@@ -926,4 +926,4 @@ Transform:
   m_LocalScale: {x: 1.38802075, y: 1.38802075, z: .925347149}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 5

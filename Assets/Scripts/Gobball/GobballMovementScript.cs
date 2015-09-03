@@ -10,7 +10,6 @@ public class GobballMovementScript : MonoBehaviour {
 		DROPPING
 	}
 
-	[SerializeField]
 	private int 	action;
 	private float 	idleTime;
 	private float 	movingSpeed;
