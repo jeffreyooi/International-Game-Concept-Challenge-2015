@@ -10,7 +10,7 @@ public class GobballMovementScript : MonoBehaviour {
 		DROPPING
 	}
 
-	float idleTime;
+	private float idleTime;
 
 	// Use this for initialization
 	void Start () {

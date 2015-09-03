@@ -34,6 +34,7 @@ public class GameControlScript : MonoBehaviour {
 					if (touch.phase == TouchPhase.Began) {
 						child.transform.position = touchPosition;
 						child.GetComponent<Renderer>().sortingOrder = 1;
+						child.GetComponent<GobballScript>().SetPickedUp(true);
 					}
 					// Drag touch, update object position to touch position
 					else if (touch.phase == TouchPhase.Moved) {
@@ -42,6 +43,7 @@ public class GameControlScript : MonoBehaviour {
 					// End touch, revert the rendering order
 					else if (touch.phase == TouchPhase.Ended) {
 						child.GetComponent<Renderer>().sortingOrder = 0;
+						child.GetComponent<GobballScript>().SetPickedUp(false);
 					}
 				}
 			}
@@ -49,13 +51,20 @@ public class GameControlScript : MonoBehaviour {
 	}
 	
 	void DetectInputEditor() {
-		if (Input.GetMouseButtonDown (0)) {
-			Vector3 cursorPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-			foreach (Transform child in gobballParent.transform) {
+		// Check for left click every frame
+		//if (Input.GetMouseButton (0)) {
+			// Convert cursor position from screen coordinates to world coordinates
+		Vector3 cursorPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+		foreach (Transform child in gobballParent.transform) {
+			if (Input.GetMouseButton(0)) {
 				if (child.GetComponent<Collider2D>() == Physics2D.OverlapPoint (cursorPosition)) {
+					child.GetComponent<Renderer>().sortingOrder = 1;
+					child.GetComponent<GobballScript>().SetPickedUp(true);
 					child.transform.position = cursorPosition;
-					Debug.Log ("Selected");
-				}
+				} 
+			} else if (Input.GetMouseButtonUp(0)) {
+				child.GetComponent<Renderer>().sortingOrder = 0;
+				child.GetComponent<GobballScript>().SetPickedUp(false);
 			}
 		}
 	}
