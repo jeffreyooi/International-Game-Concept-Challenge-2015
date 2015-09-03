@@ -27,7 +27,8 @@ public class GobballMovementScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		GobballMovement ();
-		spriteRenderer.sortingOrder = (int)transform.position.y * -1;
+		this.transform.position = new Vector3 (transform.position.x, transform.position.y, transform.position.y);
+		//spriteRenderer.sortingOrder = -Mathf.FloorToInt(transform.localPosition.y);
 	}
 
 	void GobballMovement() {
@@ -39,10 +40,11 @@ public class GobballMovementScript : MonoBehaviour {
 			}
 			break;
 		case (int)GOBBALL_BEHAVIOR.MOVING:
-			if (!CheckIfReachedWaypoint()) 
+			if (!CheckIfReachedWaypoint()) {
 				GobballWalking ();
-			else
+			} else {
 				RandomNewAction();
+			}
 			break;
 		case (int)GOBBALL_BEHAVIOR.FLOATING:
 

@@ -41,9 +41,11 @@ public class GameControlScript : MonoBehaviour {
 					}
 					// End touch, revert the rendering order
 					else if (touch.phase == TouchPhase.Ended) {
-						child.GetComponent<SpriteRenderer>().sortingOrder = 0;
-						child.GetComponent<GobballScript>().SetPickedUp(false);
-						child.GetComponent<GobballMovementScript>().SetGobballAction((int)GobballMovementScript.GOBBALL_BEHAVIOR.DROPPING);
+						if (child.GetComponent<GobballScript>().GetPickedUp()) {
+							child.GetComponent<SpriteRenderer>().sortingOrder = 0;
+							child.GetComponent<GobballScript>().SetPickedUp(false);
+							child.GetComponent<GobballMovementScript>().SetGobballAction((int)GobballMovementScript.GOBBALL_BEHAVIOR.IDLE);
+						}
 					}
 				}
 			}
@@ -73,9 +75,11 @@ public class GameControlScript : MonoBehaviour {
 			} 
 			// If mouse is released, revert the rendering order and set pick up to false
 			else if (Input.GetMouseButtonUp(0)) {
-				child.GetComponent<SpriteRenderer>().sortingOrder = 0;
-				child.GetComponent<GobballScript>().SetPickedUp(false);
-				child.GetComponent<GobballMovementScript>().SetGobballAction((int)GobballMovementScript.GOBBALL_BEHAVIOR.DROPPING);
+				if (child.GetComponent<GobballScript>().GetPickedUp()) {
+					child.GetComponent<SpriteRenderer>().sortingOrder = 0;
+					child.GetComponent<GobballScript>().SetPickedUp(false);
+					child.GetComponent<GobballMovementScript>().SetGobballAction((int)GobballMovementScript.GOBBALL_BEHAVIOR.DROPPING);
+				}
 			}
 		}
 	}

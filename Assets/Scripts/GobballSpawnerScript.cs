@@ -53,4 +53,8 @@ public class GobballSpawnerScript : MonoBehaviour {
 		// Return the vector3 calculated
 		return pos;
 	}
+
+	public Sprite ReturnSprite(int type) {
+		return gobballSprite [type];
+	}
 }

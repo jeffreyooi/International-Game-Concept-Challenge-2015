@@ -9,6 +9,9 @@ public class GobballScript : MonoBehaviour {
 	private float 	distance;
 	private float 	speed;
 	private Vector3 lastPosition;
+	private float	countdown;
+	private Transform gobballParent;
+	private SpriteRenderer spriteRenderer;
 
 	// Use this for initialization
 	void Start () {
@@ -16,6 +19,11 @@ public class GobballScript : MonoBehaviour {
 		backToPrevPos = false;	
 		distance = 0.0f;
 		speed = 5.0f;
+		spriteRenderer = GetComponent<SpriteRenderer> ();
+		gobballParent = gameObject.transform.parent;
+		if (type == (int)GobballSpawnerScript.GOBBALL_TYPE.GOBBALL_RAINBOW) {
+			countdown = 3.0f;
+		}
 	}
 	
 	// Update is called once per frame
@@ -23,6 +31,13 @@ public class GobballScript : MonoBehaviour {
 		if (backToPrevPos) {
 			// Move object back to last saved position
 			BackToPreviousPos (lastPosition);
+		}
+		if (type == (int)GobballSpawnerScript.GOBBALL_TYPE.GOBBALL_RAINBOW) {
+			countdown -= Time.deltaTime;
+			if (countdown <= 0.0f) {
+				type = Random.Range (0, sizeof(GobballSpawnerScript.GOBBALL_TYPE) - 1);
+				spriteRenderer.sprite = gobballParent.GetComponent<GobballSpawnerScript>().ReturnSprite(type);
+			}
 		}
 	}
 
