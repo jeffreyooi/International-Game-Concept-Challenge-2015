@@ -3,6 +3,11 @@ using System.Collections;
 
 using UnityEngine.UI;
 
+
+//----------------------------------------------------------------//
+//      Count Down Timer class  カウントダウンタイマークラス      //
+//----------------------------------------------------------------//
+
 public class CountDownTimer : MonoBehaviour {
 
 
@@ -23,6 +28,10 @@ public class CountDownTimer : MonoBehaviour {
     //-------------------------------------------//
     private Text CountDownText;
 
+    //-------------------------------------------//
+    //           Active Flag 有効フラグ          //
+    //-------------------------------------------//
+    private bool isActive;
 
 	// Use this for initialization
 	void Start () 
@@ -39,22 +48,29 @@ public class CountDownTimer : MonoBehaviour {
         //テキストにタイムリミットをセット
         CountDownText.text = TimeLimit.ToString();
 
+        //Initialize flag
+        isActive = true;
+
 	}
 	
 	// Update is called once per frame
 	void Update () 
     {
-        //before frame from the elapsed time subtracting
-        //前フレームからの経過時間を減算
-        TimerCalculated -= Time.deltaTime;
 
-
-        //To apply a correction After less than equal to zero
-        //0以下になったら補正をかける
-        if(TimerCalculated <= 0.0f)
+        if (isActive)
         {
-            TimerCalculated = 0.0f;
+            //before frame from the elapsed time subtracting
+            //前フレームからの経過時間を減算
+            TimerCalculated -= Time.deltaTime;
 
+
+            //To apply a correction After less than equal to zero
+            //0以下になったら補正をかける
+            if (TimerCalculated <= 0.0f)
+            {
+                TimerCalculated = 0.0f;
+
+            }
         }
 
         //calculated variable is Conversion to "int"
@@ -70,5 +86,24 @@ public class CountDownTimer : MonoBehaviour {
 
 
 
+    
+
+    // Get Current Time limit(float)
+    public float GetCurrentTimeFloat()
+    {
+        return TimerCalculated;
+    }
+
+
+    public int GetTimeLimit()
+    {
+        return TimeLimit;
+    }
+
+    //Set active flag
+    public void SetFlag(bool flag)
+    {
+        isActive = flag;
+    }
 
 }
