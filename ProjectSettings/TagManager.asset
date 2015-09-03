@@ -54,3 +54,6 @@ TagManager:
   - name: Near Hut
     uniqueID: 408656369
     locked: 0
+  - name: UI
+    uniqueID: 3463370915
+    locked: 0
