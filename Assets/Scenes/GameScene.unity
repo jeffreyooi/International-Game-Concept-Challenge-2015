@@ -243,7 +243,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 363917172}
   - 212: {fileID: 363917173}
-  - 61: {fileID: 363917174}
+  - 58: {fileID: 363917174}
+  - 114: {fileID: 363917175}
   m_Layer: 0
   m_Name: Hut Cyan
   m_TagString: Untagged
@@ -289,19 +290,31 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: eb9479f46efd26b429e2701ae207c4ef, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
---- !u!61 &363917174
-BoxCollider2D:
+--- !u!58 &363917174
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 363917171}
   m_Enabled: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Size: {x: 3.66000009, y: 4.1500001}
+  m_Radius: 1.5
+--- !u!114 &363917175
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 363917171}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d48d4e2cacfc634b94006c53dfdb0ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 0
 --- !u!1 &542035125
 GameObject:
   m_ObjectHideFlags: 0
@@ -338,7 +351,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 590667260}
   - 212: {fileID: 590667259}
-  - 61: {fileID: 590667261}
+  - 58: {fileID: 590667261}
+  - 114: {fileID: 590667262}
   m_Layer: 0
   m_Name: Hut Pink
   m_TagString: Untagged
@@ -384,19 +398,31 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1189634373}
   m_RootOrder: 0
---- !u!61 &590667261
-BoxCollider2D:
+--- !u!58 &590667261
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 590667258}
   m_Enabled: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Size: {x: 3.66000009, y: 4.1500001}
+  m_Radius: 1.5
+--- !u!114 &590667262
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 590667258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d48d4e2cacfc634b94006c53dfdb0ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 2
 --- !u!1 &665400196
 GameObject:
   m_ObjectHideFlags: 0
@@ -432,7 +458,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: .300000012
+  near clip plane: 0
   far clip plane: 1000
   field of view: 60
   orthographic: 1
@@ -581,7 +607,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 1005124427}
   - 212: {fileID: 1005124428}
-  - 61: {fileID: 1005124429}
+  - 58: {fileID: 1005124429}
+  - 114: {fileID: 1005124430}
   m_Layer: 0
   m_Name: Hut Yellow
   m_TagString: Untagged
@@ -627,19 +654,31 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 32795839e7039464297877e77ed220e2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
---- !u!61 &1005124429
-BoxCollider2D:
+--- !u!58 &1005124429
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1005124426}
   m_Enabled: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Size: {x: 3.66000009, y: 4.1500001}
+  m_Radius: 1.5
+--- !u!114 &1005124430
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1005124426}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d48d4e2cacfc634b94006c53dfdb0ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 1
 --- !u!1 &1152681202
 GameObject:
   m_ObjectHideFlags: 0

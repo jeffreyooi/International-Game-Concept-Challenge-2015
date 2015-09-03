@@ -5,14 +5,12 @@ using System.Collections;
 public class GameplayScript : MonoBehaviour {
 
 	public enum GOBBALL_TYPE {
-		GOBBALL_PINK,
 		GOBBALL_CYAN,
 		GOBBALL_ORANGE,
+		GOBBALL_PINK,
 		GOBBALL_RAINBOW
 	}
 
-	//public Text countdownTimerText;
-	//public Text numOfGobballLeftText;
 	public Transform gobballParent;
 	public GameObject gobball;
 	public Sprite[] gobballSprite;
@@ -30,10 +28,31 @@ public class GameplayScript : MonoBehaviour {
 
 	void SpawningGobball() {
 		for (int i = 0; i < numOfGobball; ++i) {
-			Vector3 gobballPosition = new Vector3 (Random.Range(-8.0f, 8.0f), Random.Range(-4.0f, 4.0f), 0);
-			GameObject newGobball = Instantiate (gobball, gobballPosition, Quaternion.identity) as GameObject;
-			newGobball.GetComponent<SpriteRenderer>().sprite = gobballSprite[Random.Range (0, 3)];
+			// Return a random spawn point inside a circle
+			Vector3 spawnPosition = SpawningCircleRange(transform.position, 4.0f);
+			// Vector3 gobballPosition = new Vector3 (Random.Range(-5.0f, 5.0f), Random.Range(-4.0f, 4.0f), 0.0f);
+			// Instantiate a new gobball
+			GameObject newGobball = Instantiate (gobball, spawnPosition, Quaternion.identity) as GameObject;
+			// Random the type and set the sprite
+			int type = Random.Range (0, 3);
+			newGobball.GetComponent<SpriteRenderer>().sprite = gobballSprite[type];
+			newGobball.GetComponent<GobballScript>().type = type;
+			// Make it a child to a parent which governs all the gobball
 			newGobball.transform.SetParent(gobballParent);
 		}
+	}
+
+	Vector3 SpawningCircleRange(Vector3 position, float radius) {
+		// Randomize an angle from a circle
+		float angle = Random.value * 360;
+		// Randomize the range from center of circle
+		float rad = Random.Range (0.0f, radius);
+		// Calculation of the position based on the angle and range from center of position
+		Vector3 pos;
+		pos.x = position.x + rad * Mathf.Sin (angle * Mathf.Deg2Rad);
+		pos.y = position.y + rad * Mathf.Cos (angle * Mathf.Deg2Rad);
+		pos.z = position.z;
+		// Return the vector3 calculated
+		return pos;
 	}
 }

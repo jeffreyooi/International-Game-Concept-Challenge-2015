@@ -22,16 +22,28 @@ public class GameControlScript : MonoBehaviour {
 	}
 	
 	void DetectInputAndroid() {
+		// Multi touch, multiple fingers to move multiple objects
 		foreach (Touch touch in Input.touches) {
-			Vector3 worldPoint = Camera.main.ScreenToWorldPoint(touch.position);
-			Vector2 touchPos = new Vector2(worldPoint.x, worldPoint.y);
+			// Convert the touch position from screen coordinates to world coordinates
+			Vector3 touchPosition = Camera.main.ScreenToWorldPoint(touch.position);
+			// Get the child from the parent list
 			foreach (Transform child in gobballParent.transform) {
-				if (child.GetComponent<Collider2D>() == Physics2D.OverlapPoint (touchPos)) {
+				// Check if the touch position overlaps with the child collider
+				if (child.GetComponent<Collider2D>() == Physics2D.OverlapPoint (touchPosition)) {
+					// Begin touch, update object position to touch position and change rendering order
 					if (touch.phase == TouchPhase.Began) {
-						Debug.Log ("Touch began");
+						child.transform.position = touchPosition;
+						child.GetComponent<Renderer>().sortingOrder = 1;
+						child.GetComponent<GobballScript>().SetPickedUp(true);
 					}
+					// Drag touch, update object position to touch position
+					else if (touch.phase == TouchPhase.Moved) {
+						child.transform.position = touchPosition;
+					}
+					// End touch, revert the rendering order
 					else if (touch.phase == TouchPhase.Ended) {
-						Debug.Log ("Touch ended");
+						child.GetComponent<Renderer>().sortingOrder = 0;
+						child.GetComponent<GobballScript>().SetPickedUp(false);
 					}
 				}
 			}
@@ -39,14 +51,20 @@ public class GameControlScript : MonoBehaviour {
 	}
 	
 	void DetectInputEditor() {
-		if (Input.GetMouseButtonDown (0)) {
-			Vector3 worldPoint = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-			Vector2 mousePosition = new Vector2 (worldPoint.x, worldPoint.y);
-			foreach (Transform child in gobballParent.transform) {
-				if (child.GetComponent<Collider2D>() == Physics2D.OverlapPoint (mousePosition)) {
-					child.transform.position = mousePosition;
-					Debug.Log ("Selected");
-				}
+		// Check for left click every frame
+		//if (Input.GetMouseButton (0)) {
+			// Convert cursor position from screen coordinates to world coordinates
+		Vector3 cursorPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+		foreach (Transform child in gobballParent.transform) {
+			if (Input.GetMouseButton(0)) {
+				if (child.GetComponent<Collider2D>() == Physics2D.OverlapPoint (cursorPosition)) {
+					child.GetComponent<Renderer>().sortingOrder = 1;
+					child.GetComponent<GobballScript>().SetPickedUp(true);
+					child.transform.position = cursorPosition;
+				} 
+			} else if (Input.GetMouseButtonUp(0)) {
+				child.GetComponent<Renderer>().sortingOrder = 0;
+				child.GetComponent<GobballScript>().SetPickedUp(false);
 			}
 		}
 	}
