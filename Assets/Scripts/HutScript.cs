@@ -3,6 +3,13 @@ using System.Collections;
 
 public class HutScript : MonoBehaviour {
 
+	public enum HUT_TYPE
+	{
+		HUT_CYAN,
+		HUT_ORANGE,
+		HUT_PINK
+	}
+
 	public int type;
 
 	// Use this for initialization
@@ -16,12 +23,15 @@ public class HutScript : MonoBehaviour {
 	}
 
 	void OnTriggerStay2D(Collider2D co) {
-		// Check if object is gobball, type of gobball matches the colour of the hut, and if the gobball is touched / clicked
-		if (co.gameObject.CompareTag("Gobball") && 
-		    co.gameObject.GetComponent<GobballScript>().type == type && 
-		    !co.gameObject.GetComponent<GobballScript>().GetPickedUp()) {
-			// If all condition matches, set gobball to not active
-			co.gameObject.SetActive(false);
+		// Check if object is gobball, and if the gobball is touched / clicked
+		if (co.gameObject.CompareTag("Gobball") && !co.gameObject.GetComponent<GobballScript>().GetPickedUp()) {
+			// Check if type of gobball matches the colour of the hut or it's a rainbow gobball
+			if (co.gameObject.GetComponent<GobballScript>().GetGobballType() == type || 
+			    co.gameObject.GetComponent<GobballScript>().GetGobballType() == (int)GobballSpawnerScript.GOBBALL_TYPE.GOBBALL_RAINBOW) {
+				co.gameObject.SetActive(false);
+			} else {
+				co.gameObject.GetComponent<GobballScript>().SetBackToPrev(true);
+			}
 		}
 	}	
 }

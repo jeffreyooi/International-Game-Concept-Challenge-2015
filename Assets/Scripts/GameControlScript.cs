@@ -5,11 +5,9 @@ public class GameControlScript : MonoBehaviour {
 
 	public GameObject gobballParent;
 
-	Transform meTransform;
-
 	// Use this for initialization
 	void Start () {
-		meTransform = this.transform;
+
 	}
 	
 	// Update is called once per frame
@@ -33,8 +31,9 @@ public class GameControlScript : MonoBehaviour {
 					// Begin touch, update object position to touch position and change rendering order
 					if (touch.phase == TouchPhase.Began) {
 						child.transform.position = touchPosition;
-						child.GetComponent<Renderer>().sortingOrder = 1;
+						child.GetComponent<SpriteRenderer>().sortingOrder = 30;
 						child.GetComponent<GobballScript>().SetPickedUp(true);
+						child.GetComponent<GobballMovementScript>().SetGobballAction((int)GobballMovementScript.GOBBALL_BEHAVIOR.FLOATING);
 					}
 					// Drag touch, update object position to touch position
 					else if (touch.phase == TouchPhase.Moved) {
@@ -42,8 +41,9 @@ public class GameControlScript : MonoBehaviour {
 					}
 					// End touch, revert the rendering order
 					else if (touch.phase == TouchPhase.Ended) {
-						child.GetComponent<Renderer>().sortingOrder = 0;
+						child.GetComponent<SpriteRenderer>().sortingOrder = 0;
 						child.GetComponent<GobballScript>().SetPickedUp(false);
+						child.GetComponent<GobballMovementScript>().SetGobballAction((int)GobballMovementScript.GOBBALL_BEHAVIOR.DROPPING);
 					}
 				}
 			}
@@ -56,15 +56,26 @@ public class GameControlScript : MonoBehaviour {
 			// Convert cursor position from screen coordinates to world coordinates
 		Vector3 cursorPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 		foreach (Transform child in gobballParent.transform) {
-			if (Input.GetMouseButton(0)) {
+			// If mouse is clicked, bring the object rendering to front, set pick up and store previous position of gobball and set the position to cursor position
+			if (Input.GetMouseButtonDown(0)) {
 				if (child.GetComponent<Collider2D>() == Physics2D.OverlapPoint (cursorPosition)) {
-					child.GetComponent<Renderer>().sortingOrder = 1;
+					child.GetComponent<SpriteRenderer>().sortingOrder = 30;
 					child.GetComponent<GobballScript>().SetPickedUp(true);
+					child.GetComponent<GobballMovementScript>().SetGobballAction((int)GobballMovementScript.GOBBALL_BEHAVIOR.FLOATING);
 					child.transform.position = cursorPosition;
 				} 
-			} else if (Input.GetMouseButtonUp(0)) {
-				child.GetComponent<Renderer>().sortingOrder = 0;
+			} 
+			// If mouse is dragged, update the position of the object to the cursor position
+			else if (Input.GetMouseButton (0)) {
+				if (child.GetComponent<Collider2D>() == Physics2D.OverlapPoint (cursorPosition)) {
+					child.transform.position = cursorPosition;
+				} 
+			} 
+			// If mouse is released, revert the rendering order and set pick up to false
+			else if (Input.GetMouseButtonUp(0)) {
+				child.GetComponent<SpriteRenderer>().sortingOrder = 0;
 				child.GetComponent<GobballScript>().SetPickedUp(false);
+				child.GetComponent<GobballMovementScript>().SetGobballAction((int)GobballMovementScript.GOBBALL_BEHAVIOR.DROPPING);
 			}
 		}
 	}
