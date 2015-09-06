@@ -42,22 +42,15 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Background
-    uniqueID: 1706282307
-    locked: 0
-  - name: Far Hut
-    uniqueID: 3539001017
+  - name: Back Hut
+    uniqueID: 2245809627
     locked: 0
   - name: Gobball
-    uniqueID: 3151531973
+    uniqueID: 3163608637
     locked: 0
-  - name: Near Hut
-    uniqueID: 408656369
+  - name: Front Hut
+    uniqueID: 2250784757
     locked: 0
   - name: UI
-<<<<<<< HEAD
-    uniqueID: 3682765819
-=======
-    uniqueID: 3463370915
->>>>>>> 1b3b2d8c5ced75ec6c24f91ba964a50d3df602f2
+    uniqueID: 1202531703
     locked: 0
