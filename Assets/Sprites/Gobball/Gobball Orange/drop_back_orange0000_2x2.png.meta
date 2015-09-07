@@ -1,0 +1,121 @@
+fileFormatVersion: 2
+guid: d1e00a37088227d45a810c9e6dab02fa
+timeCreated: 1441613217
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: drop_back_orange0000_2x2_0
+    21300002: drop_back_orange0000_2x2_1
+    21300004: drop_back_orange0000_2x2_2
+    21300006: drop_back_orange0000_2x2_3
+    21300008: drop_back_orange0000_2x2_4
+    21300010: drop_back_orange0000_2x2_5
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: drop_back_orange0000_2x2_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 514
+        width: 485
+        height: 425
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: drop_back_orange0000_2x2_1
+      rect:
+        serializedVersion: 2
+        x: 514
+        y: 520
+        width: 483
+        height: 439
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: drop_back_orange0000_2x2_2
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 148
+        width: 5
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: drop_back_orange0000_2x2_3
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 21
+        width: 458
+        height: 466
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: drop_back_orange0000_2x2_4
+      rect:
+        serializedVersion: 2
+        x: 546
+        y: 148
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: drop_back_orange0000_2x2_5
+      rect:
+        serializedVersion: 2
+        x: 558
+        y: 34
+        width: 439
+        height: 478
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

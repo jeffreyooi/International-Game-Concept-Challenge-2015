@@ -33,7 +33,7 @@ public class GobballSpawnerScript : MonoBehaviour {
 		for (int i = 0; i < numOfGobball; ++i) {
 			// Return a random spawn point inside a circle
 			//Vector3 spawnPosition = SpawningCircleRange(transform.position, 3.0f);
-			Vector3 spawnPosition = GetGrid(Random.Range(0, 9), Random.Range (0, 9));
+			Vector3 spawnPosition = GetGrid(Random.Range(0, 8), Random.Range (0, 8));
 			// Vector3 gobballPosition = new Vector3 (Random.Range(-5.0f, 5.0f), Random.Range(-4.0f, 4.0f), 0.0f);
 			// Instantiate a new gobball
 			GameObject newGobball = Instantiate (gobball, spawnPosition, Quaternion.identity) as GameObject;
@@ -61,11 +61,11 @@ public class GobballSpawnerScript : MonoBehaviour {
 	}
 
 	void SpawningGrid() {
-		waypointArrays = new Vector2[9, 9];
-		for (int x = 0; x < 9; x++) {
+		waypointArrays = new Vector2[8, 8];
+		for (int x = 0; x < 8; x++) {
 			offset_x = -x * 0.75f;
 			offset_y = -x * 0.4f;
-			for (int y = 0; y < 9; y++) {
+			for (int y = 0; y < 8; y++) {
 				Vector2 position = new Vector3(transform.position.x + offset_x, transform.position.y + offset_y);
 				offset_x += 0.75f;
 				offset_y -= 0.4f;
