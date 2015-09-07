@@ -49,7 +49,7 @@ public class CanvasUI : MonoBehaviour {
 		int score = gamePlayScript.Count;
         
 		//if Once of the game has not been finished 
-        if (CurrentTime == 0.0f || score == 15)
+        if (CurrentTime == 0.0f || score == NumOfGoball)
         {
 			//stop at count down timer
 			UIObject_CountDown.GetComponent<CountDownTimer>().SetFlag(false);

@@ -6,23 +6,48 @@ public class GobballScript : MonoBehaviour {
 	private int 	type;
 	private bool 	pickedUp;
 	private bool 	backToPrevPos;
-	private float 	distance;
+	//private float 	distance;
 	private float 	speed;
 	private Vector3 lastPosition;
+	private float	countdown;
+	private Transform gobballParent;
+	private SpriteRenderer spriteRenderer;
+	private Vector3	cursorLastPos;
+	private Vector3 cursorSpeed;
+	private float swipeDistance;
+	private Vector2 direction;
+	private float swipeSpeed;
 
 	// Use this for initialization
 	void Start () {
 		pickedUp = false;
 		backToPrevPos = false;	
-		distance = 0.0f;
+		//distance = 0.0f;
 		speed = 5.0f;
+		spriteRenderer = GetComponent<SpriteRenderer> ();
+		gobballParent = gameObject.transform.parent;
+		if (type == (int)GobballSpawnerScript.GOBBALL_TYPE.GOBBALL_RAINBOW) {
+			countdown = 3.0f;
+		}
+		cursorLastPos = Vector3.zero;
+		cursorSpeed = Vector3.zero;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if (backToPrevPos) {
+		if (pickedUp) {
+			CalculateMouseSpeed ();
+		}
+		if (backToPrevPos && !Input.GetMouseButton(0)) {
 			// Move object back to last saved position
 			BackToPreviousPos (lastPosition);
+		}
+		if (type == (int)GobballSpawnerScript.GOBBALL_TYPE.GOBBALL_RAINBOW) {
+			countdown -= Time.deltaTime;
+			if (countdown <= 0.0f) {
+				type = Random.Range (0, sizeof(GobballSpawnerScript.GOBBALL_TYPE) - 1);
+				spriteRenderer.sprite = gobballParent.GetComponent<GobballSpawnerScript>().ReturnSprite(type);
+			}
 		}
 	}
 
@@ -32,15 +57,6 @@ public class GobballScript : MonoBehaviour {
 
 	public int GetGobballType() {
 		return type;
-	}
-
-	public void SetPickedUp(bool pickUp) {
-		pickedUp = pickUp;
-		if (pickedUp == true) {
-			lastPosition = transform.position;
-		} else {
-			distance = Vector3.Distance(transform.position, lastPosition);
-		}
 	}
 
 	public bool GetPickedUp() {
@@ -61,5 +77,27 @@ public class GobballScript : MonoBehaviour {
 			// Set to false to stop running this function
 			backToPrevPos = false;
 		}
+	}
+
+	void OnMouseDown() {
+		spriteRenderer.sortingOrder = 1;
+		pickedUp = true;
+		lastPosition = transform.position;
+	}
+	
+	void OnMouseDrag() {
+		Vector3 screenToWorld = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+		Vector3 newPosition = new Vector3 (screenToWorld.x, screenToWorld.y, transform.position.y);
+		transform.position = newPosition;
+	}
+	
+	void OnMouseUp() {
+		spriteRenderer.sortingOrder = 0;
+		pickedUp = false;
+	}
+
+	void CalculateMouseSpeed() {
+		cursorSpeed = cursorLastPos - Input.mousePosition;
+		cursorLastPos = Input.mousePosition;
 	}
 }

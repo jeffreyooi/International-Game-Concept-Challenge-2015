@@ -60,7 +60,7 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 2.5
+  m_Radius: 1.5
 --- !u!114 &11436844
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -83,7 +83,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fab6b94b2e0e85f4fae87d191d0660cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  action: 0
 --- !u!212 &21217576
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -106,7 +105,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: .5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -1143435323
+  m_SortingLayerID: -1131358659
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: d665d9a385592184080055b8466b084c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -131,7 +130,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_IsKinematic
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_IsTrigger
@@ -151,7 +150,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_SortingLayerID
-      value: -1143435323
+      value: -1131358659
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Radius
+      value: 1.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
