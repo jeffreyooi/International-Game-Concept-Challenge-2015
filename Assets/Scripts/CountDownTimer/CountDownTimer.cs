@@ -5,31 +5,30 @@ using UnityEngine.UI;
 
 
 //----------------------------------------------------------------//
-//      Count Down Timer class  カウントダウンタイマークラス      //
+//      Count Down Timer class  カウントダウンタイマークラス         //
 //----------------------------------------------------------------//
 
 public class CountDownTimer : MonoBehaviour {
 
 
     //-------------------------------------------//
-    //         Time Limit  制限時間              //
+    //         Time Limit  制限時間               //
     //-------------------------------------------//
     [SerializeField]
     private int TimeLimit;
 
     //-------------------------------------------//
-    //  calculated for variable 計算用変数       //
+    //  calculated for variable 計算用変数        //
     //-------------------------------------------//
     private float TimerCalculated;
 
-
+	//-------------------------------------------//
+	//	Animator								 //
+	//-------------------------------------------//
+	private Animator CountDowmAnimator;
+ 
     //-------------------------------------------//
-    //           Show Text 表示テキスト          //
-    //-------------------------------------------//
-    private Text CountDownText;
-
-    //-------------------------------------------//
-    //           Active Flag 有効フラグ          //
+    //           Active Flag 有効フラグ           //
     //-------------------------------------------//
     private bool isActive;
 
@@ -38,16 +37,16 @@ public class CountDownTimer : MonoBehaviour {
     {
         //Get Text Component
         //コンポーネントを取得
-        CountDownText = GetComponent<Text>();
+		CountDowmAnimator = GameObject.Find("CountDown").GetComponent<Animator>();
+
+		//Rebind Animator
+		CountDowmAnimator.Rebind ();
 
         //Initialized variable
         //計算用変数を初期化
         TimerCalculated = TimeLimit;
 
-        //Set text of the Time Limit
-        //テキストにタイムリミットをセット
-        CountDownText.text = TimeLimit.ToString();
-
+       
         //Initialize flag
         isActive = true;
 
@@ -57,34 +56,31 @@ public class CountDownTimer : MonoBehaviour {
 	void Update () 
     {
 
-        if (isActive)
-        {
-            //before frame from the elapsed time subtracting
-            //前フレームからの経過時間を減算
-            TimerCalculated -= Time.deltaTime;
+        if (isActive) {
+			//before frame from the elapsed time subtracting
+			//前フレームからの経過時間を減算
+			TimerCalculated -= Time.deltaTime;
 
 
-            //To apply a correction After less than equal to zero
-            //0以下になったら補正をかける
-            if (TimerCalculated <= 0.0f)
-            {
-                TimerCalculated = 0.0f;
+			//To apply a correction After less than equal to zero
+			//0以下になったら補正をかける
+			if (TimerCalculated <= 0.0f) {
+				TimerCalculated = 0.0f;
 
-            }
-        }
+			}
+		} else {
+				CountDownAnimationEnd();
+		}
 
-        //calculated variable is Conversion to "int"
-        //計算用変数をint型に変換
-        int TimeNow = Mathf.FloorToInt(TimerCalculated);
-
-        //It is set in the text of the current time
-        //現在時間をテキストにセット
-        CountDownText.text = TimeNow.ToString();
-
+    
 
 	}
 
-
+	//Ending Count down Animation
+	void CountDownAnimationEnd()
+	{
+		CountDowmAnimator.speed = 0;
+	}
 
     
 
@@ -94,7 +90,7 @@ public class CountDownTimer : MonoBehaviour {
         return TimerCalculated;
     }
 
-
+	//get time limit 
     public int GetTimeLimit()
     {
         return TimeLimit;
