@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: b1e0a519101aac8409c02f558d85b264
-timeCreated: 1441613141
+timeCreated: 1441616074
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -65,130 +65,100 @@ TextureImporter:
     - name: drop_back_blue0011_2x5_0
       rect:
         serializedVersion: 2
-        x: 3
-        y: 3603
-        width: 484
-        height: 493
+        x: 0
+        y: 3584
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: drop_back_blue0011_2x5_1
       rect:
         serializedVersion: 2
-        x: 523
-        y: 3777
-        width: 4
-        height: 8
+        x: 512
+        y: 3584
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: drop_back_blue0011_2x5_2
       rect:
         serializedVersion: 2
-        x: 527
-        y: 3593
-        width: 472
-        height: 503
+        x: 0
+        y: 3072
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: drop_back_blue0011_2x5_3
       rect:
         serializedVersion: 2
-        x: 25
-        y: 3225
-        width: 6
-        height: 8
+        x: 512
+        y: 3072
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: drop_back_blue0011_2x5_4
       rect:
         serializedVersion: 2
-        x: 33
-        y: 3081
-        width: 454
-        height: 464
+        x: 0
+        y: 2560
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: drop_back_blue0011_2x5_5
       rect:
         serializedVersion: 2
-        x: 547
-        y: 3075
-        width: 452
-        height: 424
+        x: 512
+        y: 2560
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: drop_back_blue0011_2x5_6
       rect:
         serializedVersion: 2
-        x: 541
-        y: 3217
-        width: 4
-        height: 6
+        x: 0
+        y: 2048
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: drop_back_blue0011_2x5_7
       rect:
         serializedVersion: 2
-        x: 13
-        y: 2561
-        width: 474
-        height: 440
+        x: 512
+        y: 2048
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: drop_back_blue0011_2x5_8
       rect:
         serializedVersion: 2
-        x: 511
-        y: 2561
-        width: 488
-        height: 452
+        x: 0
+        y: 1536
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: drop_back_blue0011_2x5_9
       rect:
         serializedVersion: 2
-        x: 0
-        y: 2049
-        width: 487
-        height: 440
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: drop_back_blue0011_2x5_10
-      rect:
-        serializedVersion: 2
-        x: 511
-        y: 2049
-        width: 488
-        height: 426
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: drop_back_blue0011_2x5_11
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 1537
-        width: 487
-        height: 426
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: drop_back_blue0011_2x5_12
-      rect:
-        serializedVersion: 2
-        x: 511
-        y: 1537
-        width: 488
-        height: 426
+        x: 512
+        y: 1536
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

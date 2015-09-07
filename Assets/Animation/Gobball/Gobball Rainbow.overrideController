@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Gobball Rainbow
+  m_Controller: {fileID: 9100000, guid: f26844f98d0053c48bf8d0b8b059b57d, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: a2ce0cef4f228b5409fe93d57066ccd1, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: bda11f948fc3b0d4cadcffc5316cb4e9, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: b9af58114c2907944924c2fae439269b, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: a47d9026ab9aec44995b0a7697617751, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 372121dab6cde5a4898207931664f46e, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: bdd2cbf07e3a2004d969b127729a20fd, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: c285d581b5ee23b46b414aaeabf4b925, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 8443b91bc8ac8974dbe648e845d127f6, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 34742818845debf48bd9523a4913a82f, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: c30908df4ae97644badc610a7d2df9d8, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: fec09051b230def49820405596fa7864, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: c857576c432d61445aa36a9765be3c09, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 2e7b31c74c15e9e40b61d719b0eda296, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 8163b6c9e8fea6a4fbbd87c9e07d2f24, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: c941868efb8ae6e45aaa38c596d668f3, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: f8d31650cf85ce747a45fe748f76d161, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 79bc0b2bbb9e6554098d4d441ef33784, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: abcd9a3fdc0aae044b094777576f7e50, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: b9914288b7c875145b8c7c98cf7f66ef, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: e54fc12270f158649b9820b95945317e, type: 2}

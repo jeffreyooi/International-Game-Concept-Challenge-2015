@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 3c7d557fd730c044d8f98d39075c5042
-timeCreated: 1441613159
+timeCreated: 1441616093
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -62,100 +62,100 @@ TextureImporter:
     - name: drop_blue0011_2x5_0
       rect:
         serializedVersion: 2
-        x: 43
-        y: 3619
-        width: 458
-        height: 476
+        x: 0
+        y: 3584
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: drop_blue0011_2x5_1
       rect:
         serializedVersion: 2
-        x: 555
-        y: 3609
-        width: 454
-        height: 486
+        x: 512
+        y: 3584
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: drop_blue0011_2x5_2
       rect:
         serializedVersion: 2
-        x: 43
-        y: 3097
-        width: 440
-        height: 442
+        x: 0
+        y: 3072
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: drop_blue0011_2x5_3
       rect:
         serializedVersion: 2
-        x: 555
-        y: 3093
-        width: 440
-        height: 404
+        x: 512
+        y: 3072
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: drop_blue0011_2x5_4
       rect:
         serializedVersion: 2
-        x: 43
-        y: 2577
-        width: 448
-        height: 420
+        x: 0
+        y: 2560
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: drop_blue0011_2x5_5
       rect:
         serializedVersion: 2
-        x: 555
-        y: 2577
-        width: 450
-        height: 432
+        x: 512
+        y: 2560
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: drop_blue0011_2x5_6
       rect:
         serializedVersion: 2
-        x: 43
-        y: 2065
-        width: 456
-        height: 420
+        x: 0
+        y: 2048
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: drop_blue0011_2x5_7
       rect:
         serializedVersion: 2
-        x: 555
-        y: 2065
-        width: 456
-        height: 408
+        x: 512
+        y: 2048
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: drop_blue0011_2x5_8
       rect:
         serializedVersion: 2
-        x: 43
-        y: 1553
-        width: 452
-        height: 408
+        x: 0
+        y: 1536
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: drop_blue0011_2x5_9
       rect:
         serializedVersion: 2
-        x: 555
-        y: 1553
-        width: 450
-        height: 408
+        x: 512
+        y: 1536
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

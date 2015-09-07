@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Gobball Orange
+  m_Controller: {fileID: 9100000, guid: f26844f98d0053c48bf8d0b8b059b57d, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: a2ce0cef4f228b5409fe93d57066ccd1, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: cff060996e5443f4ab87c561b2942db4, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: b9af58114c2907944924c2fae439269b, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 32376b119d2130140a4412524e4e408a, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 372121dab6cde5a4898207931664f46e, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 2a9c4244c03a52145a722982eae17459, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: c285d581b5ee23b46b414aaeabf4b925, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 3883c0452125b8446b69db9df89afa8e, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 34742818845debf48bd9523a4913a82f, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 5a1a85c9e08fcae4a88d007eee6fead9, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: fec09051b230def49820405596fa7864, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: e5bb38826f0bb54409644eece3064a44, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 2e7b31c74c15e9e40b61d719b0eda296, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 036c9dfba3e828440ba57f8a9077e156, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: c941868efb8ae6e45aaa38c596d668f3, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 3a951a141c8b0854598849fa8e172805, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 79bc0b2bbb9e6554098d4d441ef33784, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 4a504961650853845b198d7064ff604c, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: b9914288b7c875145b8c7c98cf7f66ef, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: b3df356c6ec6e144db5c462d4252a720, type: 2}
