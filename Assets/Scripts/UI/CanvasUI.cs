@@ -12,7 +12,9 @@ public class CanvasUI : MonoBehaviour {
     private GameObject UIObject_Score;              //Score             スコア
     
 	public GameplayScript gamePlayScript;
+	public GobballSpawnerScript gobballSpawnerScript;
 
+	private int NumOfGoball;
 
 	// Use this for initialization
 	void Start () 
@@ -23,27 +25,33 @@ public class CanvasUI : MonoBehaviour {
         UIObject_ClearTime      = GameObject.Find("ClearTime");
         UIObject_Score          = GameObject.Find("Score");
 
-
+		//get num of gobball
+		NumOfGoball = 0;
  
+		NumOfGoball = gobballSpawnerScript.numOfGobball;
+
+
 
         //Unnecessary Objects Disabling
         UIObject_Panel.SetActive(false);
         UIObject_ClearTime.SetActive(false);
         UIObject_Score.SetActive(false);
 
+		Debug.Log ("Num of Gobball : "+NumOfGoball);
 
     }
 	
 	// Update is called once per frame
 	void Update () 
     {
-
+		//get current time
         float CurrentTime = UIObject_CountDown.GetComponent<CountDownTimer>().GetCurrentTimeFloat();
 		int score = gamePlayScript.Count;
-        //if Once of the game has not been finished 
+        
+		//if Once of the game has not been finished 
         if (CurrentTime == 0.0f || score == 15)
         {
-			//stop at cout down timer
+			//stop at count down timer
 			UIObject_CountDown.GetComponent<CountDownTimer>().SetFlag(false);
 
             UIObject_Panel.SetActive(true);

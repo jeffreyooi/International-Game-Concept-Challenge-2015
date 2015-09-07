@@ -577,6 +577,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gamePlayScript: {fileID: 1297656438}
+  gobballSpawnerScript: {fileID: 1635730334}
 --- !u!1 &1005124426
 GameObject:
   m_ObjectHideFlags: 0
@@ -802,7 +803,7 @@ RectTransform:
   m_RootOrder: 2
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: -153, y: 99}
+  m_AnchoredPosition: {x: -124, y: 99}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &1165812199
