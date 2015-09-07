@@ -127,7 +127,6 @@ public class GobballMovementScript : MonoBehaviour {
 	}
 
 	bool CheckIfReachedWaypoint() {
-		Debug.Log (Vector2.Distance(transform.position, nextWaypoint));
 		if (Vector2.Distance(transform.position, nextWaypoint) > 0.5f)
 			return false;
 		else 
