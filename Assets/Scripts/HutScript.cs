@@ -30,6 +30,7 @@ public class HutScript : MonoBehaviour {
 			if (co.gameObject.GetComponent<GobballScript>().GetGobballType() == type || 
 			    co.gameObject.GetComponent<GobballScript>().GetGobballType() == (int)GobballSpawnerScript.GOBBALL_TYPE.GOBBALL_RAINBOW) {
 				co.gameObject.SetActive(false);
+
 				gameplayObj.Count++;
 			} else {
 				co.gameObject.GetComponent<GobballScript>().SetBackToPrev(true);

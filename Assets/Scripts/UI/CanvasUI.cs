@@ -37,7 +37,7 @@ public class CanvasUI : MonoBehaviour {
         UIObject_ClearTime.SetActive(false);
         UIObject_Score.SetActive(false);
 
-		Debug.Log ("Num of Gobball : "+NumOfGoball);
+		//Debug.Log ("Num of Gobball : "+NumOfGoball);
 
     }
 	
