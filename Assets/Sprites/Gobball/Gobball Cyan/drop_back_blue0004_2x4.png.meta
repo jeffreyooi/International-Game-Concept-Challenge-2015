@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: c9836da0d0caefc48a5b478e632ce3bb
-timeCreated: 1441613135
+timeCreated: 1441616068
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -60,80 +60,70 @@ TextureImporter:
     - name: drop_back_blue0004_2x4_0
       rect:
         serializedVersion: 2
-        x: 4
-        y: 1576
-        width: 481
-        height: 472
+        x: 0
+        y: 1536
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: drop_back_blue0004_2x4_1
       rect:
         serializedVersion: 2
-        x: 516
-        y: 1565
-        width: 481
-        height: 483
+        x: 512
+        y: 1536
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: drop_back_blue0004_2x4_2
       rect:
         serializedVersion: 2
-        x: 17
-        y: 1200
-        width: 4
-        height: 9
+        x: 0
+        y: 1024
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: drop_back_blue0004_2x4_3
       rect:
         serializedVersion: 2
-        x: 25
-        y: 1055
-        width: 460
-        height: 480
+        x: 512
+        y: 1024
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: drop_back_blue0004_2x4_4
       rect:
         serializedVersion: 2
-        x: 516
-        y: 1049
-        width: 481
-        height: 485
+        x: 0
+        y: 512
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: drop_back_blue0004_2x4_5
       rect:
         serializedVersion: 2
-        x: 3
-        y: 538
-        width: 482
-        height: 484
+        x: 512
+        y: 512
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: drop_back_blue0004_2x4_6
       rect:
         serializedVersion: 2
-        x: 526
-        y: 533
-        width: 471
-        height: 491
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: drop_back_blue0004_2x4_7
-      rect:
-        serializedVersion: 2
-        x: 4
-        y: 14
-        width: 481
-        height: 498
+        x: 0
+        y: 0
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

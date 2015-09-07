@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 1a2921e29c23c5e4b9cbb974e7d63f13
-timeCreated: 1441613211
+timeCreated: 1441618159
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -66,140 +66,110 @@ TextureImporter:
     - name: drop_back_orange0010_2x6_0
       rect:
         serializedVersion: 2
-        x: 3
-        y: 3597
-        width: 484
-        height: 499
+        x: 0
+        y: 3584
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: drop_back_orange0010_2x6_1
       rect:
         serializedVersion: 2
-        x: 515
-        y: 3603
-        width: 484
-        height: 493
+        x: 512
+        y: 3584
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: drop_back_orange0010_2x6_2
       rect:
         serializedVersion: 2
-        x: 11
-        y: 3265
-        width: 4
-        height: 8
+        x: 0
+        y: 3072
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: drop_back_orange0010_2x6_3
       rect:
         serializedVersion: 2
-        x: 15
-        y: 3081
-        width: 472
-        height: 504
+        x: 512
+        y: 3072
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: drop_back_orange0010_2x6_4
       rect:
         serializedVersion: 2
-        x: 545
-        y: 3081
-        width: 454
-        height: 464
+        x: 0
+        y: 2560
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: drop_back_orange0010_2x6_5
       rect:
         serializedVersion: 2
-        x: 537
-        y: 3225
-        width: 6
-        height: 8
+        x: 512
+        y: 2560
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: drop_back_orange0010_2x6_6
       rect:
         serializedVersion: 2
-        x: 29
-        y: 2705
-        width: 4
-        height: 6
+        x: 0
+        y: 2048
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: drop_back_orange0010_2x6_7
       rect:
         serializedVersion: 2
-        x: 35
-        y: 2563
-        width: 452
-        height: 424
+        x: 512
+        y: 2048
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: drop_back_orange0010_2x6_8
       rect:
         serializedVersion: 2
-        x: 525
-        y: 2561
-        width: 474
-        height: 440
+        x: 0
+        y: 1536
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: drop_back_orange0010_2x6_9
       rect:
         serializedVersion: 2
-        x: 0
-        y: 2049
-        width: 487
-        height: 452
+        x: 512
+        y: 1536
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: drop_back_orange0010_2x6_10
       rect:
         serializedVersion: 2
-        x: 511
-        y: 2049
-        width: 488
-        height: 440
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: drop_back_orange0010_2x6_11
-      rect:
-        serializedVersion: 2
         x: 0
-        y: 1537
-        width: 487
-        height: 426
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: drop_back_orange0010_2x6_12
-      rect:
-        serializedVersion: 2
-        x: 511
-        y: 1537
-        width: 488
-        height: 426
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: drop_back_orange0010_2x6_13
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 1025
-        width: 487
-        height: 426
+        y: 1024
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

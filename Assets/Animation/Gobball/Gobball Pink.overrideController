@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Gobball Pink
+  m_Controller: {fileID: 9100000, guid: f26844f98d0053c48bf8d0b8b059b57d, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: a2ce0cef4f228b5409fe93d57066ccd1, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 7f8a0c9021f3d04498d2612e1e24c40d, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: b9af58114c2907944924c2fae439269b, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 3984c7823cfdfba41a31d1ac1f74f868, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 372121dab6cde5a4898207931664f46e, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 7b79f7299c9331141b4a7c06c5de3653, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: c285d581b5ee23b46b414aaeabf4b925, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: fa3924a4c6ec1df4b9e9b033d6740f36, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 34742818845debf48bd9523a4913a82f, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: b62b91f68fdd3c741aefdfb9adc0ffe5, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: fec09051b230def49820405596fa7864, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 2c56ae63d79bc964db30175b11301a8a, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 2e7b31c74c15e9e40b61d719b0eda296, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: cbad77279024d83419631c58c9f5f13d, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: c941868efb8ae6e45aaa38c596d668f3, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 192cc3ce356385246bc0b799e98d1fb5, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 79bc0b2bbb9e6554098d4d441ef33784, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 56db187c6e4c5a64e9cb7b70ef43743d, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: b9914288b7c875145b8c7c98cf7f66ef, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: c82e5e5c50551964e96d67b7dd5b38b3, type: 2}

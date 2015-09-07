@@ -10,18 +10,32 @@ public class GobballMovementScript : MonoBehaviour {
 		DROPPING
 	}
 
+	[SerializeField]
 	private int 	action;
+	[SerializeField]
 	private float 	idleTime;
 	private float 	movingSpeed;
+	[SerializeField]
 	private Vector3 nextWaypoint;
+	public int	direction;
 	public GameObject waypoint;
+	public Vector2 waypoint_coord;
+	public SpawnPointScript waypointsList;
+	public Animator anim;
 
 	// Use this for initialization
 	void Start () {
 		action = 0;
 		movingSpeed = 1.0f;
+		direction = 1;
 		nextWaypoint = transform.position;
-		waypoint = GameObject.Find ("Spawn Points");
+		waypoint = GameObject.Find ("Spawn Points"); 
+		waypointsList = waypoint.GetComponent<SpawnPointScript> ();
+		anim = GetComponent<Animator> ();
+
+		if (waypoint == null) {
+			Debug.Log ("Spawn points not found");
+		}
 		RandomIdleTime ();
 	}
 	
@@ -54,17 +68,23 @@ public class GobballMovementScript : MonoBehaviour {
 				RandomNewAction();
 			}
 			break;
-		case (int)GOBBALL_BEHAVIOR.FLOATING:
-
-			break;
-		case (int)GOBBALL_BEHAVIOR.DROPPING:
-
-			break;
+//		case (int)GOBBALL_BEHAVIOR.FLOATING:
+//			anim.SetBool("pickup", true);
+//			break;
+//		case (int)GOBBALL_BEHAVIOR.DROPPING:
+//
+//			break;
 		}
 	}
 
 	public void SetGobballAction(int newAction) {
 		action = newAction;
+		if (newAction == 2) {
+			anim.SetBool ("pickup", true);
+		} else if (newAction == 3) {
+			anim.SetBool ("pickup", false);
+			anim.SetInteger("action", 0);
+		}
 	}
 
 	void RandomNewAction() {
@@ -80,13 +100,9 @@ public class GobballMovementScript : MonoBehaviour {
 			RandomNextWaypoint ();
 			ChangeDirection();
 			break;
-		case (int)GOBBALL_BEHAVIOR.FLOATING:
-			
-			break;
-		case (int)GOBBALL_BEHAVIOR.DROPPING:
-			
-			break;
+
 		}
+		anim.SetInteger ("action", action);
 	}
 
 	void RandomIdleTime() {
@@ -94,36 +110,14 @@ public class GobballMovementScript : MonoBehaviour {
 	}
 
 	void RandomNextWaypoint() {
-		// Randomize an angle from a circle
-		float angle = (Random.Range (0, 4) * 90) + 45;
-		// Randomize the range from center of circle
-		float rad = Random.Range (0.0f, 3.5f);
-		// Calculation of the position based on the angle and range from center of position
-		Vector3 pos;
-		//Vector3 parentPosition = gameObject.transform.parent.position;
-//		pos.x = parentPosition.x + rad * Mathf.Sin (angle * Mathf.Deg2Rad);
-//		pos.y = parentPosition.y + rad * Mathf.Cos (angle * Mathf.Deg2Rad);
-//		pos.z = parentPosition.z;
-		pos.x = this.gameObject.transform.position.x + rad * Mathf.Sin (angle * Mathf.Deg2Rad);
-		pos.y = this.gameObject.transform.position.y + rad * Mathf.Cos (angle * Mathf.Deg2Rad);
-		pos.z = this.gameObject.transform.position.z;
-		// Assign the new randomized vector to the next waypoint
-		nextWaypoint = pos;
-
-//		int offset_x = 0;
-//		int offset_y = 0;
-//		for (int x = 0; x < 9; x++) {
-//			offset_x = -x * 1.0f;
-//			offset_y = -x * 0.5f;
-//			for (int y = 0; y < 9; y++) {
-//				Vector3 position = new Vector3(transform.position.x + offset_x, transform.position.y + offset_y, transform.position.z);
-//				GameObject newSpawnPoint = Instantiate (temp, position, Quaternion.identity) as GameObject;
-//				newSpawnPoint.name = "Spawnpoint " + offset_x + " " + offset_y;
-//				newSpawnPoint.transform.parent = gameObject.transform;
-//				offset_x += 1.0f;
-//				offset_y -= 0.5f;
-//			}
-//		}
+		int horizontal = Random.Range (0, 2);
+		if (horizontal == 0) {
+			waypoint_coord = new Vector2 (waypoint_coord.x, Random.Range (0, 8));
+		} else {
+			waypoint_coord = new Vector2 (Random.Range (0, 8), waypoint_coord.y);
+		}
+		Vector2 newWaypoint = waypointsList.GetWaypoint ((int)waypoint_coord.x, (int)waypoint_coord.y);
+		nextWaypoint = new Vector3 (newWaypoint.x, newWaypoint.y, newWaypoint.y);
 	}
 
 	void GobballWalking() {
@@ -133,26 +127,26 @@ public class GobballMovementScript : MonoBehaviour {
 	}
 
 	bool CheckIfReachedWaypoint() {
-		if (Vector2.Distance(transform.position, nextWaypoint) > 1.0f)
+		Debug.Log (Vector2.Distance(transform.position, nextWaypoint));
+		if (Vector2.Distance(transform.position, nextWaypoint) > 0.5f)
 			return false;
 		else 
 			return true;
 	}
 
 	void ChangeDirection() {
-		int dir_x = 1;
-		int dir_y = 1;
 		if (nextWaypoint.x < transform.position.x) {
-			dir_x = 1;
+			//direction = 1;
+			transform.localScale = new Vector3 (0.3f, transform.localScale.y, transform.localScale.z);
 		} else {
-			dir_x = -1;
+			//direction = -1;
+			transform.localScale = new Vector3 (-0.3f, transform.localScale.y, transform.localScale.z);
 		}
-
-//		if (nextWaypoint.y < transform.position.y) {
-//			dir_y = 1;
-//		} else {
-//			dir_y = -1;
-//		}
-		transform.localScale = new Vector3 (dir_x * transform.localScale.x, dir_y * transform.localScale.y, transform.localScale.z);
+		if (nextWaypoint.y < transform.position.y) {
+			anim.SetBool ("back", false);
+		} else {
+			anim.SetBool ("back", true);
+		}
+		//transform.localScale = new Vector3 (direction * transform.localScale.x, transform.localScale.y, transform.localScale.z);
 	}
 }

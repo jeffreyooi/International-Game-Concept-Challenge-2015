@@ -3,6 +3,7 @@ using System.Collections;
 
 public class GobballScript : MonoBehaviour {
 
+	[SerializeField]
 	private int 	type;
 	private bool 	pickedUp;
 	private bool 	backToPrevPos;
@@ -13,10 +14,13 @@ public class GobballScript : MonoBehaviour {
 	private Transform gobballParent;
 	private SpriteRenderer spriteRenderer;
 	private Vector3	cursorLastPos;
-	private Vector3 cursorSpeed;
+	//private Vector3 cursorSpeed;
 	private float swipeDistance;
 	private Vector2 direction;
 	private float swipeSpeed;
+	private GobballMovementScript movement;
+	public Animator anim;
+	public RuntimeAnimatorController animController;
 
 	// Use this for initialization
 	void Start () {
@@ -25,12 +29,15 @@ public class GobballScript : MonoBehaviour {
 		//distance = 0.0f;
 		speed = 5.0f;
 		spriteRenderer = GetComponent<SpriteRenderer> ();
+		movement = GetComponent<GobballMovementScript> ();
 		gobballParent = gameObject.transform.parent;
+		anim = GetComponent<Animator> ();
+		anim.runtimeAnimatorController = animController;
 		if (type == (int)GobballSpawnerScript.GOBBALL_TYPE.GOBBALL_RAINBOW) {
 			countdown = 3.0f;
 		}
 		cursorLastPos = Vector3.zero;
-		cursorSpeed = Vector3.zero;
+		//cursorSpeed = Vector3.zero;
 	}
 	
 	// Update is called once per frame
@@ -46,7 +53,8 @@ public class GobballScript : MonoBehaviour {
 			countdown -= Time.deltaTime;
 			if (countdown <= 0.0f) {
 				type = Random.Range (0, sizeof(GobballSpawnerScript.GOBBALL_TYPE) - 1);
-				spriteRenderer.sprite = gobballParent.GetComponent<GobballSpawnerScript>().ReturnSprite(type);
+				//spriteRenderer.sprite = gobballParent.GetComponent<GobballSpawnerScript>().ReturnSprite(type);
+				anim.runtimeAnimatorController = gobballParent.GetComponent<GobballSpawnerScript>().ReturnAnimController(type);
 			}
 		}
 	}
@@ -83,6 +91,7 @@ public class GobballScript : MonoBehaviour {
 		spriteRenderer.sortingOrder = 1;
 		pickedUp = true;
 		lastPosition = transform.position;
+		movement.SetGobballAction ((int)GobballMovementScript.GOBBALL_BEHAVIOR.FLOATING);
 	}
 	
 	void OnMouseDrag() {
@@ -94,10 +103,11 @@ public class GobballScript : MonoBehaviour {
 	void OnMouseUp() {
 		spriteRenderer.sortingOrder = 0;
 		pickedUp = false;
+		movement.SetGobballAction ((int)GobballMovementScript.GOBBALL_BEHAVIOR.DROPPING);
 	}
 
 	void CalculateMouseSpeed() {
-		cursorSpeed = cursorLastPos - Input.mousePosition;
+		//cursorSpeed = cursorLastPos - Input.mousePosition;
 		cursorLastPos = Input.mousePosition;
 	}
 }

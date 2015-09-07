@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 0222ee4b4e5bd96458b5b3364bc3255f
-timeCreated: 1441613242
+timeCreated: 1441618203
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -68,160 +68,160 @@ TextureImporter:
     - name: idle_orange0000_2x8_0
       rect:
         serializedVersion: 2
-        x: 43
-        y: 3601
-        width: 450
-        height: 408
+        x: 0
+        y: 3584
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: idle_orange0000_2x8_1
       rect:
         serializedVersion: 2
-        x: 555
-        y: 3601
-        width: 450
-        height: 408
+        x: 512
+        y: 3584
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: idle_orange0000_2x8_2
       rect:
         serializedVersion: 2
-        x: 43
-        y: 3089
-        width: 450
-        height: 408
+        x: 0
+        y: 3072
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: idle_orange0000_2x8_3
       rect:
         serializedVersion: 2
-        x: 555
-        y: 3089
-        width: 450
-        height: 408
+        x: 512
+        y: 3072
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: idle_orange0000_2x8_4
       rect:
         serializedVersion: 2
-        x: 43
-        y: 2577
-        width: 448
-        height: 408
+        x: 0
+        y: 2560
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: idle_orange0000_2x8_5
       rect:
         serializedVersion: 2
-        x: 555
-        y: 2577
-        width: 448
-        height: 408
+        x: 512
+        y: 2560
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: idle_orange0000_2x8_6
       rect:
         serializedVersion: 2
-        x: 41
-        y: 2065
-        width: 450
-        height: 408
+        x: 0
+        y: 2048
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: idle_orange0000_2x8_7
       rect:
         serializedVersion: 2
-        x: 553
-        y: 2063
-        width: 448
-        height: 410
+        x: 512
+        y: 2048
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: idle_orange0000_2x8_8
       rect:
         serializedVersion: 2
-        x: 41
-        y: 1551
-        width: 448
-        height: 410
+        x: 0
+        y: 1536
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: idle_orange0000_2x8_9
       rect:
         serializedVersion: 2
-        x: 553
-        y: 1551
-        width: 448
-        height: 410
+        x: 512
+        y: 1536
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: idle_orange0000_2x8_10
       rect:
         serializedVersion: 2
-        x: 41
-        y: 1041
-        width: 450
-        height: 408
+        x: 0
+        y: 1024
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: idle_orange0000_2x8_11
       rect:
         serializedVersion: 2
-        x: 555
-        y: 1041
-        width: 448
-        height: 408
+        x: 512
+        y: 1024
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: idle_orange0000_2x8_12
       rect:
         serializedVersion: 2
-        x: 43
-        y: 529
-        width: 448
-        height: 408
+        x: 0
+        y: 512
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: idle_orange0000_2x8_13
       rect:
         serializedVersion: 2
-        x: 555
-        y: 529
-        width: 450
-        height: 408
+        x: 512
+        y: 512
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: idle_orange0000_2x8_14
       rect:
         serializedVersion: 2
-        x: 43
-        y: 17
-        width: 450
-        height: 408
+        x: 0
+        y: 0
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: idle_orange0000_2x8_15
       rect:
         serializedVersion: 2
-        x: 555
-        y: 17
-        width: 450
-        height: 408
+        x: 512
+        y: 0
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
