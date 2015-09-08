@@ -56,20 +56,6 @@ public class GobballSpawnerScript : MonoBehaviour {
 		}
 	}
 
-//	Vector3 SpawningCircleRange(Vector3 position, float radius) {
-//		// Randomize an angle from a circle
-//		float angle = Random.value * 360;
-//		// Randomize the range from center of circle
-//		float rad = Random.Range (0.0f, radius);
-//		// Calculation of the position based on the angle and range from center of position
-//		Vector3 pos;
-//		pos.x = position.x + rad * Mathf.Sin (angle * Mathf.Deg2Rad);
-//		pos.y = position.y + rad * Mathf.Cos (angle * Mathf.Deg2Rad);
-//		pos.z = position.z;
-//		// Return the vector3 calculated
-//		return pos;
-//	}
-
 	void SpawnRainbow() {
 		Vector2 tempSpawnpoint = new Vector2 (Random.Range (0, 8), Random.Range (0, 8));
 		Vector3 spawnPosition = spawnPointList.GetWaypoint((int)tempSpawnpoint.x, (int)tempSpawnpoint.y);

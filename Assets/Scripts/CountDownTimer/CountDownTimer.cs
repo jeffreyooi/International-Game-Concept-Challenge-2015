@@ -35,6 +35,7 @@ public class CountDownTimer : MonoBehaviour {
 	// Use this for initialization
 	void Start () 
     {
+		TimeLimit = 15;
         //Get Text Component
         //コンポーネントを取得
 		CountDowmAnimator = GameObject.Find("CountDown").GetComponent<Animator>();

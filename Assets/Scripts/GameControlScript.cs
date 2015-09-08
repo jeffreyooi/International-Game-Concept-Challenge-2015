@@ -12,15 +12,17 @@ public class GameControlScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-#if UNITY_ANDROID
-		//DetectInputAndroid();
+#if UNITY_EDITOR
+
+#elif UNITY_ANDROID
+		DetectInputAndroid();
 #endif
 	}
 	
 	void DetectInputAndroid() {
 		// Multi touch, multiple fingers to move multiple objects
 		//foreach (Touch touch in Input.touches) {
-		touch = Input.touches [0];
+		touch = Input.GetTouch (0);
 		// Convert the touch position from screen coordinates to world coordinates
 		Vector3 touchPosition = Camera.main.ScreenToWorldPoint(touch.position);
 		// Get the child from the parent list
