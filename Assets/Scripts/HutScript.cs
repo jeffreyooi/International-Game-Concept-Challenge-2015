@@ -13,14 +13,41 @@ public class HutScript : MonoBehaviour {
 	public int type;
 	public GameplayScript gameplayObj;
 
-	// Use this for initialization
-	void Start () {
+	//audio sources
+	private AudioSource audioSource;
+	public AudioClip[] audioClip;
 
+	// Use this for initialization
+	void Start () 
+	{
+		audioSource = GetComponent<AudioSource> ();
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void Update ()
+	{
 	
+	}
+
+
+	void OnTriggerEnter2D(Collider2D col)
+	{
+		if (col.gameObject.CompareTag("Gobball")) {
+
+			audioSource.PlayOneShot(audioClip[0]);
+
+			// Check if type of gobball matches the colour of the hut or it's a rainbow gobball
+			if (col.gameObject.GetComponent<GobballScript>().GetGobballType() == type || 
+			    col.gameObject.GetComponent<GobballScript>().GetGobballType() == (int)GobballSpawnerScript.GOBBALL_TYPE.GOBBALL_RAINBOW) {
+
+				audioSource.PlayOneShot(audioClip[Random.Range(2,5)]);
+
+			} else {
+				
+				audioSource.PlayOneShot(audioClip[1]);
+				//audioSource[1].PlayOneShot(audioSource[1].clip);
+			}
+		}
 	}
 
 	void OnTriggerStay2D(Collider2D co) {
@@ -30,9 +57,13 @@ public class HutScript : MonoBehaviour {
 			if (co.gameObject.GetComponent<GobballScript>().GetGobballType() == type || 
 			    co.gameObject.GetComponent<GobballScript>().GetGobballType() == (int)GobballSpawnerScript.GOBBALL_TYPE.GOBBALL_RAINBOW) {
 				co.gameObject.SetActive(false);
+
 				gameplayObj.Count++;
 			} else {
+
 				co.gameObject.GetComponent<GobballScript>().SetBackToPrev(true);
+
+				//audioSource[1].Play();
 			}
 		}
 	}	
