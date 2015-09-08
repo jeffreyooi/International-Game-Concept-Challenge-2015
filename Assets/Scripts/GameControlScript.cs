@@ -1,87 +1,72 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+namespace Farming_Gobball {
 public class GameControlScript : MonoBehaviour {
 
-	public GameObject gobballParent;
-	private Touch touch;
-	// Use this for initialization
-	void Start () {
+		private GameplayScript gameplay;
+		public GameObject gobballParent;
+		private Touch touch;
+		private Transform target;
 
-	}
-	
-	// Update is called once per frame
-	void Update () {
-#if UNITY_EDITOR
-
-#elif UNITY_ANDROID
-		DetectInputAndroid();
-#endif
-	}
-	
-	void DetectInputAndroid() {
-		// Multi touch, multiple fingers to move multiple objects
-		//foreach (Touch touch in Input.touches) {
-		touch = Input.GetTouch (0);
-		// Convert the touch position from screen coordinates to world coordinates
-		Vector3 touchPosition = Camera.main.ScreenToWorldPoint(touch.position);
-		// Get the child from the parent list
-		foreach (Transform child in gobballParent.transform) {
-			// Check if the touch position overlaps with the child collider
-			if (child.GetComponent<Collider2D>() == Physics2D.OverlapPoint (touchPosition)) {
-				// Begin touch, update object position to touch position and change rendering order
-				if (touch.phase == TouchPhase.Began) {
-					child.transform.position = touchPosition;
-					child.GetComponent<SpriteRenderer>().sortingOrder = 1;
-					child.GetComponent<GobballScript>().SetPickedUp(true);
-					child.GetComponent<GobballMovementScript>().SetGobballAction((int)GobballMovementScript.GOBBALL_BEHAVIOR.FLOATING);
+		// Use this for initialization
+		void Start () {
+			target = null;
+			gameplay = GetComponent<GameplayScript> ();
+		}
+		
+		// Update is called once per frame
+		void Update () {
+	#if UNITY_ANDROID
+			DetectInputAndroid();
+	#endif
+		}
+		
+		void DetectInputAndroid() {
+			if (gameplay.GetGameEnd () == false && gameplay.GetGameStart()) {
+				// If there's one touch
+				if (Input.touchCount > 0) {
+					// Only get the first touch
+					touch = Input.GetTouch (0);
+					// Convert the touch position from screen coordinates to world coordinates
+					Vector3 touchPosition = Camera.main.ScreenToWorldPoint (touch.position);
+					// If begin touch 
+					if (touch.phase == TouchPhase.Began) {
+						// Get the child from the parent list
+						foreach (Transform child in gobballParent.transform) {
+							// Check if the touch position overlaps with the child collider
+							if (child.GetComponent<Collider2D> () == Physics2D.OverlapPoint (touchPosition)) {
+								// Assign child to target and control target from now on
+								target = child;
+								target.transform.position = touchPosition;
+								target.GetComponent<SpriteRenderer> ().sortingOrder = 1;
+								target.GetComponent<GobballScript> ().SetPickedUp (true);
+								target.GetComponent<GobballMovementScript> ().SetGobballAction ((int)GobballMovementScript.GOBBALL_BEHAVIOR.FLOATING);
+							}
+						}
+					}
+					// Drag touch, update object position to touch position
+					else if (touch.phase == TouchPhase.Moved) {
+						target.position = touchPosition;
+					}
+					// End touch, revert the rendering order
+					else if (touch.phase == TouchPhase.Ended) {
+						target.GetComponent<SpriteRenderer> ().sortingOrder = 0;
+						target.GetComponent<GobballScript> ().SetPickedUp (false);
+						target.GetComponent<GobballMovementScript> ().SetGobballAction ((int)GobballMovementScript.GOBBALL_BEHAVIOR.DROPPING);
+						target = null;
+					}
+					
 				}
-				// Drag touch, update object position to touch position
-				else if (touch.phase == TouchPhase.Moved) {
-					child.transform.position = touchPosition;
-				}
-				// End touch, revert the rendering order
-				else if (touch.phase == TouchPhase.Ended) {
-					if (child.GetComponent<GobballScript>().GetPickedUp()) {
-						child.GetComponent<SpriteRenderer>().sortingOrder = 0;
-						child.GetComponent<GobballScript>().SetPickedUp(false);
-						child.GetComponent<GobballMovementScript>().SetGobballAction((int)GobballMovementScript.GOBBALL_BEHAVIOR.IDLE);
+			} else {
+				if (Input.touchCount > 0) {
+					// Only get the first touch
+					touch = Input.GetTouch (0);
+					if (touch.phase == TouchPhase.Ended) {
+						Application.LoadLevel("Splasher");
 					}
 				}
 			}
 		}
-		//}
 	}
-//	
-//	void DetectInputEditor() {
-//		// Check for left click every frame
-//		//if (Input.GetMouseButton (0)) {
-//			// Convert cursor position from screen coordinates to world coordinates
-//		Vector3 cursorPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-//		foreach (Transform child in gobballParent.transform) {
-//			// If mouse is clicked, bring the object rendering to front, set pick up and store previous position of gobball and set the position to cursor position
-//			if (Input.GetMouseButtonDown(0)) {
-//				if (child.GetComponent<Collider2D>() == Physics2D.OverlapPoint (cursorPosition)) {
-//					child.GetComponent<SpriteRenderer>().sortingOrder = 1;
-//					child.GetComponent<GobballScript>().SetPickedUp(true);
-//					child.GetComponent<GobballMovementScript>().SetGobballAction((int)GobballMovementScript.GOBBALL_BEHAVIOR.FLOATING);
-//					child.transform.position = cursorPosition;
-//				} 
-//			} 
-//			// If mouse is dragged, update the position of the object to the cursor position
-//			else if (Input.GetMouseButton (0)) {
-//				if (child.GetComponent<Collider2D>() == Physics2D.OverlapPoint (cursorPosition)) {
-//					child.transform.position = cursorPosition;
-//				} 
-//			} 
-//			// If mouse is released, revert the rendering order and set pick up to false
-//			else if (Input.GetMouseButtonUp(0)) {
-//				if (child.GetComponent<GobballScript>().GetPickedUp()) {
-//					child.GetComponent<SpriteRenderer>().sortingOrder = 0;
-//					child.GetComponent<GobballScript>().SetPickedUp(false);
-//					child.GetComponent<GobballMovementScript>().SetGobballAction((int)GobballMovementScript.GOBBALL_BEHAVIOR.DROPPING);
-//				}
-//			}
-//		}
-//	}
 }

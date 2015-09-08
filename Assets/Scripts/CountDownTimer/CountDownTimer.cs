@@ -3,104 +3,109 @@ using System.Collections;
 
 using UnityEngine.UI;
 
-
+namespace Farming_Gobball {
 //----------------------------------------------------------------//
 //      Count Down Timer class  カウントダウンタイマークラス         //
 //----------------------------------------------------------------//
 
-public class CountDownTimer : MonoBehaviour {
+	public class CountDownTimer : MonoBehaviour {
 
 
-    //-------------------------------------------//
-    //         Time Limit  制限時間               //
-    //-------------------------------------------//
-    [SerializeField]
-    private int TimeLimit;
+	    //-------------------------------------------//
+	    //         Time Limit  制限時間               //
+	    //-------------------------------------------//
+	    [SerializeField]
+	    private int TimeLimit;
 
-    //-------------------------------------------//
-    //  calculated for variable 計算用変数        //
-    //-------------------------------------------//
-    private float TimerCalculated;
+	    //-------------------------------------------//
+	    //  calculated for variable 計算用変数        //
+	    //-------------------------------------------//
+	    private float TimerCalculated;
 
-	//-------------------------------------------//
-	//	Animator								 //
-	//-------------------------------------------//
-	private Animator CountDowmAnimator;
- 
-    //-------------------------------------------//
-    //           Active Flag 有効フラグ           //
-    //-------------------------------------------//
-    private bool isActive;
+		//-------------------------------------------//
+		//	Animator								 //
+		//-------------------------------------------//
+		private Animator CountDowmAnimator;
+	 
+	    //-------------------------------------------//
+	    //           Active Flag 有効フラグ           //
+	    //-------------------------------------------//
+	    private bool isActive;
 
-	// Use this for initialization
-	void Start () 
-    {
-		TimeLimit = 15;
-        //Get Text Component
-        //コンポーネントを取得
-		CountDowmAnimator = GameObject.Find("CountDown").GetComponent<Animator>();
+		public GameplayScript gameplay;
 
-		//Rebind Animator
-		CountDowmAnimator.Rebind ();
+		// Use this for initialization
+		void Start () 
+	    {
+	        //Get Text Component
+	        //コンポーネントを取得
+			//CountDowmAnimator = GameObject.Find("CountDown").GetComponent<Animator>();
+			CountDowmAnimator = GetComponent<Animator> ();
 
-        //Initialized variable
-        //計算用変数を初期化
-        TimerCalculated = TimeLimit;
+			//Rebind Animator
+			//CountDowmAnimator.Rebind ();
+			CountDowmAnimator.speed = 0;
 
-       
-        //Initialize flag
-        isActive = true;
+	        //Initialized variable
+	        //計算用変数を初期化
+	        TimerCalculated = TimeLimit;
 
-	}
-	
-	// Update is called once per frame
-	void Update () 
-    {
+	       
+	        //Initialize flag
+	        isActive = true;
 
-        if (isActive) {
-			//before frame from the elapsed time subtracting
-			//前フレームからの経過時間を減算
-			TimerCalculated -= Time.deltaTime;
+		}
+		
+		// Update is called once per frame
+		void Update () 
+	    {
+			if (gameplay.GetGameStart () == true) {
+				CountDowmAnimator.speed = 1;
+				if (isActive) {
+					//before frame from the elapsed time subtracting
+					//前フレームからの経過時間を減算
+					TimerCalculated -= Time.deltaTime;
 
 
-			//To apply a correction After less than equal to zero
-			//0以下になったら補正をかける
-			if (TimerCalculated <= 0.0f) {
-				TimerCalculated = 0.0f;
+					//To apply a correction After less than equal to zero
+					//0以下になったら補正をかける
+					if (TimerCalculated <= 0.0f) {
+						TimerCalculated = 0.0f;
+
+					}
+				} else {
+					CountDownAnimationEnd ();
+				}
 
 			}
-		} else {
-				CountDownAnimationEnd();
+
 		}
 
-    
+		//Ending Count down Animation
+		void CountDownAnimationEnd()
+		{
+			CountDowmAnimator.speed = 0;
+		}
+
+	    
+
+	    // Get Current Time limit(float)
+	    public float GetCurrentTimeFloat()
+	    {
+	        return TimerCalculated;
+	    }
+
+		//get time limit 
+	    public int GetTimeLimit()
+	    {
+	        return TimeLimit;
+	    }
+
+	    //Set active flag
+	    public void SetFlag(bool flag)
+	    {
+	        isActive = flag;
+	    }
 
 	}
-
-	//Ending Count down Animation
-	void CountDownAnimationEnd()
-	{
-		CountDowmAnimator.speed = 0;
-	}
-
-    
-
-    // Get Current Time limit(float)
-    public float GetCurrentTimeFloat()
-    {
-        return TimerCalculated;
-    }
-
-	//get time limit 
-    public int GetTimeLimit()
-    {
-        return TimeLimit;
-    }
-
-    //Set active flag
-    public void SetFlag(bool flag)
-    {
-        isActive = flag;
-    }
-
 }

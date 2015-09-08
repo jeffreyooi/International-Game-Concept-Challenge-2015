@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Hut Cyan
+  m_Controller: {fileID: 9100000, guid: ba1262bd9b92cd742b39d153c4802f7b, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: ba42a7b88bf407c4ca5cb55290ec8f8a, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 55f2439a1530f43489c3d3f519bebc73, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: c973a8d3de376b343a0502cee94ccced, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: a89c3405e5cd02f49bd8151b8fc2f474, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 222a74d3944bdbc4aa2125a27d19ae28, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: f1ca8fc6a14d0ae4890bead8b6e5b581, type: 2}

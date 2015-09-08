@@ -161,6 +161,67 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
+--- !u!1 &263224387
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 224: {fileID: 263224390}
+  - 222: {fileID: 263224389}
+  - 114: {fileID: 263224388}
+  m_Layer: 5
+  m_Name: Tutorial
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &263224388
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 263224387}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 9e7091697acf5a946b2f0c6450f89dbf, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!222 &263224389
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 263224387}
+--- !u!224 &263224390
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 263224387}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 708559439}
+  m_RootOrder: 5
+  m_AnchorMin: {x: .5, y: .5}
+  m_AnchorMax: {x: .5, y: .5}
+  m_AnchoredPosition: {x: 0, y: 2.28880017e-05}
+  m_SizeDelta: {x: 1081, y: 608}
+  m_Pivot: {x: .5, y: .5}
 --- !u!1 &363917171
 GameObject:
   m_ObjectHideFlags: 0
@@ -173,6 +234,7 @@ GameObject:
   - 58: {fileID: 363917174}
   - 82: {fileID: 363917177}
   - 114: {fileID: 363917175}
+  - 95: {fileID: 363917176}
   m_Layer: 0
   m_Name: Hut Cyan
   m_TagString: Untagged
@@ -230,7 +292,7 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: -.5}
   serializedVersion: 2
-  m_Radius: 1.29999995
+  m_Radius: 1.5
 --- !u!114 &363917175
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -250,6 +312,23 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 2d44c31d388599143903ce4a2e293ccd, type: 3}
   - {fileID: 8300000, guid: 99cd854f1adcc204f8301c0ac7173f25, type: 3}
   - {fileID: 8300000, guid: 2bcbfe052f630334d8faa43b47b79812, type: 3}
+--- !u!95 &363917176
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 363917171}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 22100000, guid: a4c0d6d0d64eb94439fe248e176d20b7, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!82 &363917177
 AudioSource:
   m_ObjectHideFlags: 0
@@ -442,6 +521,7 @@ GameObject:
   - 58: {fileID: 590667261}
   - 82: {fileID: 590667263}
   - 114: {fileID: 590667262}
+  - 95: {fileID: 590667264}
   m_Layer: 0
   m_Name: Hut Pink
   m_TagString: Untagged
@@ -499,7 +579,7 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_Offset: {x: -.200000003, y: -.5}
   serializedVersion: 2
-  m_Radius: 1.29999995
+  m_Radius: 1.5
 --- !u!114 &590667262
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -588,6 +668,23 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
+--- !u!95 &590667264
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 590667258}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ba1262bd9b92cd742b39d153c4802f7b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &665400196
 GameObject:
   m_ObjectHideFlags: 0
@@ -832,6 +929,7 @@ RectTransform:
   - {fileID: 1750743470}
   - {fileID: 1165812198}
   - {fileID: 1695601404}
+  - {fileID: 263224390}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_AnchorMin: {x: 0, y: 0}
@@ -1073,6 +1171,7 @@ GameObject:
   - 58: {fileID: 1005124429}
   - 82: {fileID: 1005124432}
   - 114: {fileID: 1005124430}
+  - 95: {fileID: 1005124431}
   m_Layer: 0
   m_Name: Hut Yellow
   m_TagString: Untagged
@@ -1130,7 +1229,7 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: -.25}
   serializedVersion: 2
-  m_Radius: 1.29999995
+  m_Radius: 1.5
 --- !u!114 &1005124430
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1150,6 +1249,23 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 2d44c31d388599143903ce4a2e293ccd, type: 3}
   - {fileID: 8300000, guid: 99cd854f1adcc204f8301c0ac7173f25, type: 3}
   - {fileID: 8300000, guid: 2bcbfe052f630334d8faa43b47b79812, type: 3}
+--- !u!95 &1005124431
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1005124426}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 22100000, guid: 6725b6b8517f85d40806082d89657dd9, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!82 &1005124432
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1266,9 +1382,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 3761416d7b1136740be3f0260216a3a5, type: 3}
     m_FontSize: 48
     m_FontStyle: 0
     m_BestFit: 0
@@ -1297,7 +1413,7 @@ MonoBehaviour:
   m_Script: {fileID: -900027084, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_EffectColor: {r: .0955881849, g: .987525344, b: .655355573, a: .5}
+  m_EffectColor: {r: .400000036, g: .266666681, b: .0666666701, a: 1}
   m_EffectDistance: {x: 1, y: -1}
   m_UseGraphicAlpha: 1
 --- !u!1 &1182045622
@@ -1413,6 +1529,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Count: 0
+  TotalGobball: 0
+  gobballSpawner: {fileID: 1635730334}
 --- !u!4 &1297656439
 Transform:
   m_ObjectHideFlags: 0
@@ -1617,6 +1735,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: ee9d185c562210e4d9148fa3fe95f463, type: 3}
   - {fileID: 21300000, guid: 0197abbae0baad446a38aa94498e5b59, type: 3}
   spawnPointList: {fileID: 1439819932}
+  game: {fileID: 1297656438}
   animController:
   - {fileID: 22100000, guid: 5fd3c1a4e9c8ba04fae984b50b9a1a1a, type: 2}
   - {fileID: 22100000, guid: b5a47587f4495754da51e87ad7de04a7, type: 2}
@@ -1738,9 +1857,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 3761416d7b1136740be3f0260216a3a5, type: 3}
     m_FontSize: 48
     m_FontStyle: 0
     m_BestFit: 0
@@ -1769,7 +1888,7 @@ MonoBehaviour:
   m_Script: {fileID: -900027084, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_EffectColor: {r: 0, g: 1, b: .83448267, a: .5}
+  m_EffectColor: {r: .400000036, g: .266666681, b: .0666666701, a: 1}
   m_EffectDistance: {x: 1, y: -1}
   m_UseGraphicAlpha: 1
 --- !u!1001 &1701588402
@@ -1839,6 +1958,10 @@ Prefab:
       propertyPath: TimeLimit
       value: 16
       objectReference: {fileID: 0}
+    - target: {fileID: 11422530, guid: 38af5a4bd1693344e9f89f5aecc221a8, type: 2}
+      propertyPath: gameplay
+      value: 
+      objectReference: {fileID: 1297656438}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 38af5a4bd1693344e9f89f5aecc221a8, type: 2}
   m_IsPrefabParent: 0
