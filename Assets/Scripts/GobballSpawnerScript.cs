@@ -16,6 +16,7 @@ public class GobballSpawnerScript : MonoBehaviour {
 	public GameObject 	gobball;
 	public Sprite[] 	gobballSprite;
 	public SpawnPointScript	spawnPointList;
+	public GameplayScript game;
 	public RuntimeAnimatorController[] animController;
 
 	// Use this for initialization
@@ -85,6 +86,7 @@ public class GobballSpawnerScript : MonoBehaviour {
 		// Make it a child to a parent which governs all the gobball
 		newGobball.transform.SetParent(this.gameObject.transform);
 		newGobball.GetComponent<GobballScript> ().PlayExplosion ();
+		game.SetTotalGobball (game.GetTotalGobball () + 1);
 	}
 
 	public Sprite ReturnSprite(int type) {

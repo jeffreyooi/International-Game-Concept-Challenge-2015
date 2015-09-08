@@ -14,6 +14,7 @@ public class GobballScript : MonoBehaviour {
 	private Transform gobballParent;
 	private SpriteRenderer spriteRenderer;
 	private GobballMovementScript movement;
+	private GameObject game;
 	public ParticleSystem rainbowExplosion;
 	public ParticleSystem rainbowImplosion;
 	public RuntimeAnimatorController animController;
@@ -31,6 +32,7 @@ public class GobballScript : MonoBehaviour {
 		gobballParent = gameObject.transform.parent;
 		anim = GetComponent<Animator> ();
 		anim.runtimeAnimatorController = animController;
+		game = GameObject.Find ("Gameplay");
 		if (type == (int)GobballSpawnerScript.GOBBALL_TYPE.GOBBALL_RAINBOW) {
 			countdown = 3.0f;
 		}
@@ -53,6 +55,7 @@ public class GobballScript : MonoBehaviour {
 			if (countdown <= 0.0f) {
 				PlayImplosion();
 				gameObject.SetActive(false);
+				game.GetComponent<GameplayScript>().SetTotalGobball (game.GetComponent<GameplayScript>().GetTotalGobball () - 1);
 			}
 		}
 	}

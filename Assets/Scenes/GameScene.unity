@@ -1413,6 +1413,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Count: 0
+  TotalGobball: 0
+  gobballSpawner: {fileID: 1635730334}
 --- !u!4 &1297656439
 Transform:
   m_ObjectHideFlags: 0
@@ -1617,6 +1619,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: ee9d185c562210e4d9148fa3fe95f463, type: 3}
   - {fileID: 21300000, guid: 0197abbae0baad446a38aa94498e5b59, type: 3}
   spawnPointList: {fileID: 1439819932}
+  game: {fileID: 1297656438}
   animController:
   - {fileID: 22100000, guid: 5fd3c1a4e9c8ba04fae984b50b9a1a1a, type: 2}
   - {fileID: 22100000, guid: b5a47587f4495754da51e87ad7de04a7, type: 2}

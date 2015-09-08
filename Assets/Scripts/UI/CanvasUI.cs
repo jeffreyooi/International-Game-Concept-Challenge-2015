@@ -51,9 +51,9 @@ public class CanvasUI : MonoBehaviour {
 		//get current time
         float CurrentTime = UIObject_CountDown.GetComponent<CountDownTimer>().GetCurrentTimeFloat();
 		int score = gamePlayScript.Count;
-        
+		Debug.Log (gamePlayScript.GetTotalGobball ());
 		//if Once of the game has not been finished 
-        if (CurrentTime == 0.0f || score == NumOfGoball)
+		if (CurrentTime == 0.0f || score == gamePlayScript.GetTotalGobball())
         {
 
 			AudioSource audioSourceEnd = GetComponent<AudioSource>();
