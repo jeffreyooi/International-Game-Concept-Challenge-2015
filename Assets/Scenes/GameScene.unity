@@ -244,56 +244,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 0
   gameplayObj: {fileID: 1297656438}
---- !u!1001 &500590648
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 429350, guid: 4981e2440f0fca14b98256b5566ae85b, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 429350, guid: 4981e2440f0fca14b98256b5566ae85b, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 429350, guid: 4981e2440f0fca14b98256b5566ae85b, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 429350, guid: 4981e2440f0fca14b98256b5566ae85b, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 429350, guid: 4981e2440f0fca14b98256b5566ae85b, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 429350, guid: 4981e2440f0fca14b98256b5566ae85b, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 429350, guid: 4981e2440f0fca14b98256b5566ae85b, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 429350, guid: 4981e2440f0fca14b98256b5566ae85b, type: 2}
-      propertyPath: m_RootOrder
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 165594, guid: 4981e2440f0fca14b98256b5566ae85b, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 19861764, guid: 4981e2440f0fca14b98256b5566ae85b, type: 2}
-      propertyPath: ColorModule.gradient.maxGradient.key0.rgba
-      value: 4278190335
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 4981e2440f0fca14b98256b5566ae85b, type: 2}
-  m_IsPrefabParent: 0
   audioClip:
   - {fileID: 8300000, guid: 95b49faf42a1b18418dcb0dec163b017, type: 3}
   - {fileID: 8300000, guid: 8addfc76021cf5a4e8260ba449876139, type: 3}
@@ -369,6 +319,56 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
+--- !u!1001 &500590648
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 429350, guid: 4981e2440f0fca14b98256b5566ae85b, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 429350, guid: 4981e2440f0fca14b98256b5566ae85b, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 429350, guid: 4981e2440f0fca14b98256b5566ae85b, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 429350, guid: 4981e2440f0fca14b98256b5566ae85b, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 429350, guid: 4981e2440f0fca14b98256b5566ae85b, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 429350, guid: 4981e2440f0fca14b98256b5566ae85b, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 429350, guid: 4981e2440f0fca14b98256b5566ae85b, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 429350, guid: 4981e2440f0fca14b98256b5566ae85b, type: 2}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 165594, guid: 4981e2440f0fca14b98256b5566ae85b, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 19861764, guid: 4981e2440f0fca14b98256b5566ae85b, type: 2}
+      propertyPath: ColorModule.gradient.maxGradient.key0.rgba
+      value: 4278190335
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 4981e2440f0fca14b98256b5566ae85b, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &533544907
 GameObject:
   m_ObjectHideFlags: 0
@@ -442,7 +442,6 @@ GameObject:
   - 58: {fileID: 590667261}
   - 82: {fileID: 590667263}
   - 114: {fileID: 590667262}
-  - 111: {fileID: 590667263}
   m_Layer: 0
   m_Name: Hut Pink
   m_TagString: Untagged
@@ -520,16 +519,6 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 2d44c31d388599143903ce4a2e293ccd, type: 3}
   - {fileID: 8300000, guid: 99cd854f1adcc204f8301c0ac7173f25, type: 3}
   - {fileID: 8300000, guid: 2bcbfe052f630334d8faa43b47b79812, type: 3}
---- !u!111 &590667263
-Animation:
-  serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 2edbfd94f967f3c4f8bb09b654570248, type: 2}
-  m_Animations:
-  - {fileID: 7400000, guid: 2edbfd94f967f3c4f8bb09b654570248, type: 2}
-  m_WrapMode: 0
-  m_PlayAutomatically: 0
-  m_AnimatePhysics: 0
-  m_CullingType: 0
 --- !u!82 &590667263
 AudioSource:
   m_ObjectHideFlags: 0
