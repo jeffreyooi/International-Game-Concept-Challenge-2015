@@ -10,7 +10,8 @@ public class CanvasUI : MonoBehaviour {
     private GameObject UIObject_Panel;              //Panel             パネル
     private GameObject UIObject_ClearTime;          //ClearTime         クリア時間
     private GameObject UIObject_Score;              //Score             スコア
-    
+	private GameObject UIObject_Image;				//Image
+
 	public GameplayScript gamePlayScript;
 	public GobballSpawnerScript gobballSpawnerScript;
 
@@ -25,6 +26,7 @@ public class CanvasUI : MonoBehaviour {
         UIObject_Panel          = GameObject.Find("Panel");
         UIObject_ClearTime      = GameObject.Find("ClearTime");
         UIObject_Score          = GameObject.Find("Score");
+		UIObject_Image			= GameObject.Find ("ResultImage");
 
 		//get num of gobball
 		NumOfGoball = 0;
@@ -37,6 +39,7 @@ public class CanvasUI : MonoBehaviour {
         UIObject_Panel.SetActive(false);
         UIObject_ClearTime.SetActive(false);
         UIObject_Score.SetActive(false);
+		UIObject_Image.SetActive (false);
 
 		//Debug.Log ("Num of Gobball : "+NumOfGoball);
 
@@ -64,12 +67,13 @@ public class CanvasUI : MonoBehaviour {
             UIObject_Panel.SetActive(true);
             UIObject_ClearTime.SetActive(true);
             UIObject_Score.SetActive(true);
+			UIObject_Image.SetActive(true);
 
             //Calculates the time and score
             float ClearTime = (UIObject_CountDown.GetComponent<CountDownTimer>().GetTimeLimit()-1) - UIObject_CountDown.GetComponent<CountDownTimer>().GetCurrentTimeFloat();
 
-            UIObject_ClearTime.GetComponent<Text>().text = "ClearTime  : " + ClearTime.ToString("N2") + "sec";
-			UIObject_Score.GetComponent<Text>().text = "Score  :"+"  "+ score.ToString();
+            UIObject_ClearTime.GetComponent<Text>().text = ClearTime.ToString("N2") + "sec";
+			UIObject_Score.GetComponent<Text>().text = score.ToString();
 
 
         }
