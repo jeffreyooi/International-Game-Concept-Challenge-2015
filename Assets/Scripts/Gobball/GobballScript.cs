@@ -3,30 +3,25 @@ using System.Collections;
 
 public class GobballScript : MonoBehaviour {
 
-	[SerializeField]
 	private int 	type;
 	private bool 	pickedUp;
 	private bool 	backToPrevPos;
-	//private float 	distance;
 	private float 	speed;
-	private Vector3 lastPosition;
 	private float	countdown;
+	private Vector2 direction;
+	private Vector3 lastPosition;
+	private Animator anim;
 	private Transform gobballParent;
 	private SpriteRenderer spriteRenderer;
-	private Vector3	cursorLastPos;
-	//private Vector3 cursorSpeed;
-	private float swipeDistance;
-	private Vector2 direction;
-	private float swipeSpeed;
 	private GobballMovementScript movement;
-	public Animator anim;
+	public ParticleSystem rainbowExplosion;
+	public ParticleSystem rainbowImplosion;
 	public RuntimeAnimatorController animController;
 
 	// Use this for initialization
 	void Start () {
 		pickedUp = false;
 		backToPrevPos = false;	
-		//distance = 0.0f;
 		speed = 5.0f;
 		spriteRenderer = GetComponent<SpriteRenderer> ();
 		movement = GetComponent<GobballMovementScript> ();
@@ -36,15 +31,10 @@ public class GobballScript : MonoBehaviour {
 		if (type == (int)GobballSpawnerScript.GOBBALL_TYPE.GOBBALL_RAINBOW) {
 			countdown = 3.0f;
 		}
-		cursorLastPos = Vector3.zero;
-		//cursorSpeed = Vector3.zero;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if (pickedUp) {
-			CalculateMouseSpeed ();
-		}
 		if (backToPrevPos && !Input.GetMouseButton(0)) {
 			// Move object back to last saved position
 			BackToPreviousPos (lastPosition);
@@ -52,11 +42,14 @@ public class GobballScript : MonoBehaviour {
 		if (type == (int)GobballSpawnerScript.GOBBALL_TYPE.GOBBALL_RAINBOW) {
 			countdown -= Time.deltaTime;
 			if (countdown <= 0.0f) {
-				type = Random.Range (0, sizeof(GobballSpawnerScript.GOBBALL_TYPE) - 1);
-				//spriteRenderer.sprite = gobballParent.GetComponent<GobballSpawnerScript>().ReturnSprite(type);
-				anim.runtimeAnimatorController = gobballParent.GetComponent<GobballSpawnerScript>().ReturnAnimController(type);
+				PlayImplosion();
+				gameObject.SetActive(false);
 			}
 		}
+	}
+
+	public void SetAnimController(int type) {
+		anim.runtimeAnimatorController = gobballParent.GetComponent<GobballSpawnerScript>().ReturnAnimController(type);
 	}
 
 	public void SetGobballType(int newType) {
@@ -67,12 +60,26 @@ public class GobballScript : MonoBehaviour {
 		return type;
 	}
 
+	public void SetPickedUp(bool pickup) {
+		pickedUp = pickup;
+	}
+
 	public bool GetPickedUp() {
 		return pickedUp;
 	}
 
 	public void SetBackToPrev(bool back) {
 		backToPrevPos = back;
+	}
+
+	public void PlayExplosion() {
+		ParticleSystem poof = Instantiate(rainbowExplosion, transform.position, Quaternion.identity) as ParticleSystem;
+		Destroy (poof.gameObject, poof.startLifetime);
+	}
+
+	void PlayImplosion() {
+		ParticleSystem poof = Instantiate(rainbowImplosion, transform.position, Quaternion.identity) as ParticleSystem;
+		Destroy (poof.gameObject, poof.startLifetime);
 	}
 
 	void BackToPreviousPos(Vector3 prevPos) {
@@ -104,10 +111,5 @@ public class GobballScript : MonoBehaviour {
 		spriteRenderer.sortingOrder = 0;
 		pickedUp = false;
 		movement.SetGobballAction ((int)GobballMovementScript.GOBBALL_BEHAVIOR.DROPPING);
-	}
-
-	void CalculateMouseSpeed() {
-		//cursorSpeed = cursorLastPos - Input.mousePosition;
-		cursorLastPos = Input.mousePosition;
 	}
 }

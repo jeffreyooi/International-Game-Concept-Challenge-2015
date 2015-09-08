@@ -10,12 +10,9 @@ public class GobballMovementScript : MonoBehaviour {
 		DROPPING
 	}
 
-	[SerializeField]
 	private int 	action;
-	[SerializeField]
 	private float 	idleTime;
 	private float 	movingSpeed;
-	[SerializeField]
 	private Vector3 nextWaypoint;
 	public int	direction;
 	public GameObject waypoint;
@@ -32,7 +29,6 @@ public class GobballMovementScript : MonoBehaviour {
 		waypoint = GameObject.Find ("Spawn Points"); 
 		waypointsList = waypoint.GetComponent<SpawnPointScript> ();
 		anim = GetComponent<Animator> ();
-
 		if (waypoint == null) {
 			Debug.Log ("Spawn points not found");
 		}
@@ -127,6 +123,7 @@ public class GobballMovementScript : MonoBehaviour {
 	}
 
 	bool CheckIfReachedWaypoint() {
+		// Check if reached waypoint by determine distance between 2 vectors
 		if (Vector2.Distance(transform.position, nextWaypoint) > 0.5f)
 			return false;
 		else 

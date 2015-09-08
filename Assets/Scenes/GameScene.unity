@@ -243,6 +243,56 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 0
   gameplayObj: {fileID: 1297656438}
+--- !u!1001 &500590648
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 429350, guid: 4981e2440f0fca14b98256b5566ae85b, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 429350, guid: 4981e2440f0fca14b98256b5566ae85b, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 429350, guid: 4981e2440f0fca14b98256b5566ae85b, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 429350, guid: 4981e2440f0fca14b98256b5566ae85b, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 429350, guid: 4981e2440f0fca14b98256b5566ae85b, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 429350, guid: 4981e2440f0fca14b98256b5566ae85b, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 429350, guid: 4981e2440f0fca14b98256b5566ae85b, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 429350, guid: 4981e2440f0fca14b98256b5566ae85b, type: 2}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 165594, guid: 4981e2440f0fca14b98256b5566ae85b, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 19861764, guid: 4981e2440f0fca14b98256b5566ae85b, type: 2}
+      propertyPath: ColorModule.gradient.maxGradient.key0.rgba
+      value: 4278190335
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 4981e2440f0fca14b98256b5566ae85b, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &533544907
 GameObject:
   m_ObjectHideFlags: 0
@@ -315,6 +365,7 @@ GameObject:
   - 212: {fileID: 590667259}
   - 58: {fileID: 590667261}
   - 114: {fileID: 590667262}
+  - 111: {fileID: 590667263}
   m_Layer: 0
   m_Name: Hut Pink
   m_TagString: Untagged
@@ -386,6 +437,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 2
   gameplayObj: {fileID: 1297656438}
+--- !u!111 &590667263
+Animation:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 590667258}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 2edbfd94f967f3c4f8bb09b654570248, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 2edbfd94f967f3c4f8bb09b654570248, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &665400196
 GameObject:
   m_ObjectHideFlags: 0
@@ -679,7 +745,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1002386745
 Transform:
   m_ObjectHideFlags: 0
@@ -743,7 +809,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1005124426}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.03000021, y: -1.61000001, z: 0}
+  m_LocalPosition: {x: -7.98999977, y: -1.94000006, z: 0}
   m_LocalScale: {x: 1.84000015, y: 1.84000003, z: 1}
   m_Children: []
   m_Father: {fileID: 1189634373}
@@ -832,7 +898,7 @@ RectTransform:
   m_RootOrder: 2
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: -124, y: 99}
+  m_AnchoredPosition: {x: -154, y: 99}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &1165812199
@@ -1064,6 +1130,52 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gobballParent: {fileID: 1635730333}
+--- !u!1001 &1318799837
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 457050, guid: 82653a05a22b53b49a9f6d2943d799f9, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 457050, guid: 82653a05a22b53b49a9f6d2943d799f9, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 457050, guid: 82653a05a22b53b49a9f6d2943d799f9, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 457050, guid: 82653a05a22b53b49a9f6d2943d799f9, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 457050, guid: 82653a05a22b53b49a9f6d2943d799f9, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 457050, guid: 82653a05a22b53b49a9f6d2943d799f9, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 457050, guid: 82653a05a22b53b49a9f6d2943d799f9, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 457050, guid: 82653a05a22b53b49a9f6d2943d799f9, type: 2}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 196610, guid: 82653a05a22b53b49a9f6d2943d799f9, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 82653a05a22b53b49a9f6d2943d799f9, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &1439819930
 GameObject:
   m_ObjectHideFlags: 0
@@ -1189,14 +1301,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   numOfGobball: 10
+  timeToSpawnRainbow: 0
+  spawnedRainbow: 0
   gobball: {fileID: 115434, guid: 01358d8d6221be94ab24c54b72512c17, type: 2}
   gobballSprite:
   - {fileID: 21300000, guid: d665d9a385592184080055b8466b084c, type: 3}
   - {fileID: 21300000, guid: c7f6f93f45b792242bfa128eccc3ad66, type: 3}
   - {fileID: 21300000, guid: ee9d185c562210e4d9148fa3fe95f463, type: 3}
   - {fileID: 21300000, guid: 0197abbae0baad446a38aa94498e5b59, type: 3}
-  spawnPoint: {fileID: 1439819930}
-  spawnPointList: {fileID: 0}
+  spawnPointList: {fileID: 1439819932}
   animController:
   - {fileID: 22100000, guid: 5fd3c1a4e9c8ba04fae984b50b9a1a1a, type: 2}
   - {fileID: 22100000, guid: b5a47587f4495754da51e87ad7de04a7, type: 2}

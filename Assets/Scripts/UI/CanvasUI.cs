@@ -67,4 +67,9 @@ public class CanvasUI : MonoBehaviour {
         }
     
     }
+
+	void UpdateNumOfGobball (int newNum) {
+		NumOfGoball = newNum;
+		Debug.Log (NumOfGoball);
+	}
 }

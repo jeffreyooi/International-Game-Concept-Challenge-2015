@@ -4,54 +4,52 @@ using System.Collections;
 public class GameControlScript : MonoBehaviour {
 
 	public GameObject gobballParent;
-	private Transform target;
-
+	private Touch touch;
 	// Use this for initialization
 	void Start () {
-		target = null;
+
 	}
 	
 	// Update is called once per frame
 	void Update () {
-#if UNITY_EDITOR
-		//DetectInputEditor();
-#elif UNITY_ANDROID
+#if UNITY_ANDROID
 		//DetectInputAndroid();
 #endif
 	}
 	
-//	void DetectInputAndroid() {
-//		// Multi touch, multiple fingers to move multiple objects
-//		foreach (Touch touch in Input.touches) {
-//			// Convert the touch position from screen coordinates to world coordinates
-//			Vector3 touchPosition = Camera.main.ScreenToWorldPoint(touch.position);
-//			// Get the child from the parent list
-//			foreach (Transform child in gobballParent.transform) {
-//				// Check if the touch position overlaps with the child collider
-//				if (child.GetComponent<Collider2D>() == Physics2D.OverlapPoint (touchPosition)) {
-//					// Begin touch, update object position to touch position and change rendering order
-//					if (touch.phase == TouchPhase.Began) {
-//						child.transform.position = touchPosition;
-//						child.GetComponent<SpriteRenderer>().sortingOrder = 1;
-//						child.GetComponent<GobballScript>().SetPickedUp(true);
-//						child.GetComponent<GobballMovementScript>().SetGobballAction((int)GobballMovementScript.GOBBALL_BEHAVIOR.FLOATING);
-//					}
-//					// Drag touch, update object position to touch position
-//					else if (touch.phase == TouchPhase.Moved) {
-//						child.transform.position = touchPosition;
-//					}
-//					// End touch, revert the rendering order
-//					else if (touch.phase == TouchPhase.Ended) {
-//						if (child.GetComponent<GobballScript>().GetPickedUp()) {
-//							child.GetComponent<SpriteRenderer>().sortingOrder = 0;
-//							child.GetComponent<GobballScript>().SetPickedUp(false);
-//							child.GetComponent<GobballMovementScript>().SetGobballAction((int)GobballMovementScript.GOBBALL_BEHAVIOR.IDLE);
-//						}
-//					}
-//				}
-//			}
-//		}
-//	}
+	void DetectInputAndroid() {
+		// Multi touch, multiple fingers to move multiple objects
+		//foreach (Touch touch in Input.touches) {
+		touch = Input.touches [0];
+		// Convert the touch position from screen coordinates to world coordinates
+		Vector3 touchPosition = Camera.main.ScreenToWorldPoint(touch.position);
+		// Get the child from the parent list
+		foreach (Transform child in gobballParent.transform) {
+			// Check if the touch position overlaps with the child collider
+			if (child.GetComponent<Collider2D>() == Physics2D.OverlapPoint (touchPosition)) {
+				// Begin touch, update object position to touch position and change rendering order
+				if (touch.phase == TouchPhase.Began) {
+					child.transform.position = touchPosition;
+					child.GetComponent<SpriteRenderer>().sortingOrder = 1;
+					child.GetComponent<GobballScript>().SetPickedUp(true);
+					child.GetComponent<GobballMovementScript>().SetGobballAction((int)GobballMovementScript.GOBBALL_BEHAVIOR.FLOATING);
+				}
+				// Drag touch, update object position to touch position
+				else if (touch.phase == TouchPhase.Moved) {
+					child.transform.position = touchPosition;
+				}
+				// End touch, revert the rendering order
+				else if (touch.phase == TouchPhase.Ended) {
+					if (child.GetComponent<GobballScript>().GetPickedUp()) {
+						child.GetComponent<SpriteRenderer>().sortingOrder = 0;
+						child.GetComponent<GobballScript>().SetPickedUp(false);
+						child.GetComponent<GobballMovementScript>().SetGobballAction((int)GobballMovementScript.GOBBALL_BEHAVIOR.IDLE);
+					}
+				}
+			}
+		}
+		//}
+	}
 //	
 //	void DetectInputEditor() {
 //		// Check for left click every frame
