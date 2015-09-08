@@ -22,6 +22,9 @@ public class GobballScript : MonoBehaviour {
 	public Animator anim;
 	public RuntimeAnimatorController animController;
 
+
+	private AudioSource audioSource;
+
 	// Use this for initialization
 	void Start () {
 		pickedUp = false;
@@ -38,6 +41,9 @@ public class GobballScript : MonoBehaviour {
 		}
 		cursorLastPos = Vector3.zero;
 		//cursorSpeed = Vector3.zero;
+
+
+		audioSource = GetComponent<AudioSource> ();
 	}
 	
 	// Update is called once per frame
@@ -92,6 +98,10 @@ public class GobballScript : MonoBehaviour {
 		pickedUp = true;
 		lastPosition = transform.position;
 		movement.SetGobballAction ((int)GobballMovementScript.GOBBALL_BEHAVIOR.FLOATING);
+
+		//play audio
+		audioSource.Play();
+
 	}
 	
 	void OnMouseDrag() {

@@ -15,6 +15,7 @@ public class CanvasUI : MonoBehaviour {
 	public GobballSpawnerScript gobballSpawnerScript;
 
 	private int NumOfGoball;
+	private bool isGameEnd;
 
 	// Use this for initialization
 	void Start () 
@@ -30,7 +31,7 @@ public class CanvasUI : MonoBehaviour {
  
 		NumOfGoball = gobballSpawnerScript.numOfGobball;
 
-
+		isGameEnd = false;
 
         //Unnecessary Objects Disabling
         UIObject_Panel.SetActive(false);
@@ -51,6 +52,12 @@ public class CanvasUI : MonoBehaviour {
 		//if Once of the game has not been finished 
         if (CurrentTime == 0.0f || score == NumOfGoball)
         {
+
+			AudioSource audioSourceEnd = GetComponent<AudioSource>();
+			if(!isGameEnd){
+				audioSourceEnd.PlayOneShot(audioSourceEnd.clip);
+				isGameEnd = true;
+			}
 			//stop at count down timer
 			UIObject_CountDown.GetComponent<CountDownTimer>().SetFlag(false);
 
@@ -63,6 +70,7 @@ public class CanvasUI : MonoBehaviour {
 
             UIObject_ClearTime.GetComponent<Text>().text = "ClearTime  : " + ClearTime.ToString("N2") + "sec";
 			UIObject_Score.GetComponent<Text>().text = "Score  :"+"  "+ score.ToString();
+
 
         }
     
