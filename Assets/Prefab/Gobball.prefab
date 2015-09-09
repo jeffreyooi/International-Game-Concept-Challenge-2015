@@ -163,6 +163,7 @@ MonoBehaviour:
   rainbowExplosion: {fileID: 19861764, guid: 4981e2440f0fca14b98256b5566ae85b, type: 2}
   rainbowImplosion: {fileID: 19818340, guid: 82653a05a22b53b49a9f6d2943d799f9, type: 2}
   animController: {fileID: 0}
+  poof: {fileID: 8300000, guid: 9fe3e0afe7afded4284f87e866baf406, type: 3}
 --- !u!114 &11451018
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -286,6 +287,10 @@ Prefab:
       propertyPath: m_EffectColor.b
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: poof
+      value: 
+      objectReference: {fileID: 8300000, guid: 9fe3e0afe7afded4284f87e866baf406, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 115434}

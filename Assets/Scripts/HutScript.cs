@@ -24,7 +24,6 @@ namespace Farming_Gobball {
 		{
 			audioSource = GetComponent<AudioSource> ();
 			anim = GetComponent<Animator> ();
-			//anim.StopPlayback ();
 		}
 
 		void OnTriggerEnter2D(Collider2D col)
@@ -51,6 +50,7 @@ namespace Farming_Gobball {
 					} else {
 						// Move gobball back to previous position where it is picked up
 						co.gameObject.GetComponent<GobballScript>().SetBackToPrev(true);
+						Handheld.Vibrate ();
 						audioSource.PlayOneShot(audioClip[1]);
 					}
 				}

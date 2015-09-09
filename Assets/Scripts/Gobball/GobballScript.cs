@@ -22,6 +22,7 @@ namespace Farming_Gobball {
 		public RuntimeAnimatorController animController;
 		
 		private AudioSource audioSource;
+		public AudioClip poof;
 
 		// Use this for initialization
 		void Start () {
@@ -35,15 +36,12 @@ namespace Farming_Gobball {
 			spriteRenderer = GetComponent<SpriteRenderer> ();
 			movement = GetComponent<GobballMovementScript> ();
 			game = GameObject.Find ("Gameplay");
+			audioSource = GetComponent<AudioSource> ();
 			if (type == (int)GobballSpawnerScript.GOBBALL_TYPE.GOBBALL_RAINBOW) {
 				countdown = 3.0f;
+				audioSource.PlayOneShot(poof);
 			}
 
-			//cursorLastPos = Vector3.zero;
-			//cursorSpeed = Vector3.zero;
-
-
-			audioSource = GetComponent<AudioSource> ();
 		}
 		
 		// Update is called once per frame
@@ -56,8 +54,9 @@ namespace Farming_Gobball {
 				countdown -= Time.deltaTime;
 				if (countdown <= 0.0f) {
 					PlayImplosion();
-					gameObject.SetActive(false);
 					game.GetComponent<GameplayScript>().SetTotalGobball (game.GetComponent<GameplayScript>().GetTotalGobball () - 1);
+					audioSource.PlayOneShot(poof);
+					gameObject.SetActive(false);
 				}
 			}
 		}
@@ -119,7 +118,6 @@ namespace Farming_Gobball {
 			lastPosition = transform.position;
 			movement.SetGobballAction ((int)GobballMovementScript.GOBBALL_BEHAVIOR.FLOATING);
 
-			//play audio
 			audioSource.Play();
 
 		}
