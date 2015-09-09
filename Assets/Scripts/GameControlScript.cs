@@ -49,7 +49,7 @@ public class GameControlScript : MonoBehaviour {
 					else if (touch.phase == TouchPhase.Moved) {
 						target.position = touchPosition;
 					}
-					// End touch, revert the rendering order and change the action to dropping from air
+					// End touch, revert the rendering order
 					else if (touch.phase == TouchPhase.Ended) {
 						target.GetComponent<SpriteRenderer> ().sortingOrder = 0;
 						target.GetComponent<GobballScript> ().SetPickedUp (false);
@@ -62,7 +62,6 @@ public class GameControlScript : MonoBehaviour {
 				if (Input.touchCount > 0) {
 					// Only get the first touch
 					touch = Input.GetTouch (0);
-					// If touch ended, change to splash screen
 					if (touch.phase == TouchPhase.Ended) {
 						Application.LoadLevel("Splasher");
 					}

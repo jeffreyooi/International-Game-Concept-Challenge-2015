@@ -39,6 +39,10 @@ namespace Farming_Gobball {
 				countdown = 3.0f;
 			}
 
+			//cursorLastPos = Vector3.zero;
+			//cursorSpeed = Vector3.zero;
+
+
 			audioSource = GetComponent<AudioSource> ();
 		}
 		
@@ -72,7 +76,6 @@ namespace Farming_Gobball {
 
 		public void SetPickedUp(bool pickup) {
 			pickedUp = pickup;
-			// If it is picked up set the last position when it is picked up and play gobball sound
 			if (pickedUp == true) {
 				lastPosition = transform.position;
 				audioSource.PlayOneShot(audioSource.clip);
@@ -88,13 +91,11 @@ namespace Farming_Gobball {
 		}
 
 		public void PlayExplosion() {
-			// Play particle system once
 			ParticleSystem poof = Instantiate(rainbowExplosion, transform.position, Quaternion.identity) as ParticleSystem;
 			Destroy (poof.gameObject, poof.startLifetime);
 		}
 
 		void PlayImplosion() {
-			// Play particle system once
 			ParticleSystem poof = Instantiate(rainbowImplosion, transform.position, Quaternion.identity) as ParticleSystem;
 			Destroy (poof.gameObject, poof.startLifetime);
 		}
