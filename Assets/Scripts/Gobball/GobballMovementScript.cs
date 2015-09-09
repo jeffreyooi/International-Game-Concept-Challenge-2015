@@ -65,12 +65,6 @@ public class GobballMovementScript : MonoBehaviour {
 					RandomNewAction();
 				}
 				break;
-	//		case (int)GOBBALL_BEHAVIOR.FLOATING:
-	//			anim.SetBool("pickup", true);
-	//			break;
-	//		case (int)GOBBALL_BEHAVIOR.DROPPING:
-	//
-	//			break;
 			}
 		}
 
@@ -107,6 +101,7 @@ public class GobballMovementScript : MonoBehaviour {
 		}
 
 		void RandomNextWaypoint() {
+			// Random to check if gobball is moving horizontal or vertical and get the waypoint 
 			int horizontal = Random.Range (0, 2);
 			if (horizontal == 0) {
 				waypoint_coord = new Vector2 (waypoint_coord.x, Random.Range (0, 8));
@@ -114,10 +109,12 @@ public class GobballMovementScript : MonoBehaviour {
 				waypoint_coord = new Vector2 (Random.Range (0, 8), waypoint_coord.y);
 			}
 			Vector2 newWaypoint = waypointsList.GetWaypoint ((int)waypoint_coord.x, (int)waypoint_coord.y);
+			// Assign next waypoint obtained from the waypoint double vector
 			nextWaypoint = new Vector3 (newWaypoint.x, newWaypoint.y, newWaypoint.y);
 		}
 
 		void GobballWalking() {
+			// Move the gobball to the new position
 			Vector3 newPosition = (nextWaypoint - transform.position).normalized;
 			newPosition *= movingSpeed * Time.deltaTime;
 			gameObject.transform.Translate (newPosition, Space.World);

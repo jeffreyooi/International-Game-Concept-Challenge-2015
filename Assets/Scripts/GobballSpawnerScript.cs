@@ -28,11 +28,15 @@ namespace Farming_Gobball {
 		}
 
 		void Update () {
+			// Check if game started
 			if (game.GetGameStart () == true) {
+				// If haven't spawn a rainbow gobball
 				if (!spawnedRainbow) {
+					// If time to spawn rainbow gobball is not up, countdown
 					if (timeToSpawnRainbow > 0.0f) {
 						timeToSpawnRainbow -= Time.deltaTime;
 					} else {
+						// Spawn rainbow gobball
 						SpawnRainbow ();
 						spawnedRainbow = true;
 					}
@@ -65,7 +69,7 @@ namespace Farming_Gobball {
 			Vector3 spawnPosition = spawnPointList.GetWaypoint((int)tempSpawnpoint.x, (int)tempSpawnpoint.y);
 			// Instantiate a new gobball
 			GameObject newGobball = Instantiate (gobball, spawnPosition, Quaternion.identity) as GameObject;
-			// Random the type and set the sprite
+			// Set the type of gobball
 			int type = (int)GobballSpawnerScript.GOBBALL_TYPE.GOBBALL_RAINBOW;
 			newGobball.GetComponent<SpriteRenderer>().sprite = gobballSprite[type];
 			newGobball.GetComponent<GobballScript>().animController = animController[type];
